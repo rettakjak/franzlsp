@@ -1,0 +1,333 @@
+-----------------
+About These Files
+-----------------
+
+The files in the cmu-ai directory are from the CMU AI Repository at
+
+    https://www.cs.cmu.edu/Groups/AI/lang/others/franzlsp
+
+The file cmu-ai/0.doc describes the rest of the files in the cmu-ai
+directory.
+
+The tarball in the fateman directory contains the final university
+release of Franz Lisp (Opus 38.92) for the VAX.  This is from
+Richard J. Fateman's Berkeley homepage where he says "I don't know
+why you would want this old stuff, but the university software
+distribution office has closed and they left a copy with me."
+
+    https://people.eecs.berkeley.edu/~fateman
+
+The Franz Lisp Manual in the manual directory is from the Computer
+History Museum's Software Preservation Group at
+
+    http://www.softwarepreservation.net/projects/LISP/franz
+
+The manual describes Opus 38.69 from 1983.
+
+Finally, this README file was written by Kris Katterjohn.
+
+
+--------------------------------------------------------
+Running An Old Franz Lisp Interpreter Under A New NetBSD
+--------------------------------------------------------
+
+These are the steps that I (Kris Katterjohn) performed to get an old
+Franz Lisp interpreter executable from 1994 running directly on NetBSD
+8.0 (which is the most recently released version as I'm writing this).
+
+I'm not the first person to get this running.  In particular, it seems
+that Christos Zoulas and Kamil Rytarowski of NetBSD have had this Franz
+Lisp interpreter running on their NetBSD boxes over the last few years.
+
+I'm not doing anything special or new, but maybe having the steps all
+together below will be helpful to someone else (or me in the future).
+
+By the way: I first tried to get this all working on a NetBSD 7.1.2
+install I already had around, but I couldn't get it to work.  After
+getting frustrated because I thought the steps should work, I tried
+again using 8.0 and it worked fine.  Oh well.
+
+In the directory cmu-ai/op38_jd you will find Jeff Dalton's port of
+Franz Lisp Opus 38.92 to NetBSD 0.9 (i386) from 1994.  The files
+lisp.gz and liszt.gz contain executable images for the interpreter and
+compiler, respectively.  franz.tgz contains (among other things) some
+library files.
+
+Getting that interpreter to run directly on a amd64 NetBSD 8.0 box is
+not difficult, but it does require recompiling the kernel (or having a
+kernel that has the appropriate compatibility options set).  The NetBSD
+documentation has plenty of information on recompiling kernels and it
+is easy to follow.  In particular, the chapter "Compiling the kernel"
+in The NetBSD Guide describes how to obtain and install the kernel
+sources, how to configure the kernel, and finally how to build and
+install the kernel itself.
+
+I started with the GENERIC kernel configuration and changed it so that
+all of the following were set (and I named this new kernel MINE).  Many
+of these options were already set and the rest were commented out.  I
+did not attempt to find the minimum number of options to set.
+
+options         EXEC_AOUT       # required by binaries from before 1.5
+options         COMPAT_NOMID    # NetBSD 0.8, 386BSD, and BSDI
+options         COMPAT_09       # NetBSD 0.9,
+options         COMPAT_10       # NetBSD 1.0,
+options         COMPAT_11       # NetBSD 1.1,
+options         COMPAT_12       # NetBSD 1.2 (and 386BSD and BSDI),
+options         COMPAT_13       # NetBSD 1.3 (and 386BSD and BSDI),
+options         COMPAT_14       # NetBSD 1.4,
+options         COMPAT_15       # NetBSD 1.5,
+options         COMPAT_16       # NetBSD 1.6,
+options         COMPAT_20       # NetBSD 2.0,
+options         COMPAT_30       # NetBSD 3.0,
+options         COMPAT_40       # NetBSD 4.0,
+options         COMPAT_50       # NetBSD 5.0,
+options         COMPAT_60       # NetBSD 6.0, and
+options         COMPAT_70       # NetBSD 7.0 binary compatibility.
+options         COMPAT_43       # and 4.3BSD
+
+After building and installing the new kernel and then rebooting, we
+also need to do the following:
+
+$ sysctl -w vm.user_va0_disable=0
+
+(You can add a line to /etc/sysctl.conf to have this automatically set
+at boot time.)
+
+After all of that, the setup is now something like this:
+
+$ uname -a
+NetBSD localhost 8.0 NetBSD 8.0 (MINE) #1: Wed Apr 17 10:45:59 UTC 2019  root@localhost:/usr/src/sys/arch/amd64/compile/MINE amd64
+
+$ sysctl vm.user_va0_disable
+vm.user_va0_disable = 0
+
+The rest of the steps below are all relative to the cmu-ai/op38_jd
+directory.
+
+We need to extract the lisplib directory from franz.tgz and place it
+at /usr/local/lib/lisp.  The lisplib directory contains various
+library files and the interpreter expects these files to be in
+/usr/local/lib/lisp.
+
+$ tar zxf franz.tgz lisplib
+
+$ su
+Password:
+
+# mv lisplib /usr/local/lib/lisp
+
+Now uncompressing lisp.gz and then executing the resulting interpreter
+should give us a working Franz Lisp REPL:
+
+$ ls -l lisp.gz
+-rw-r--r--  1 kjak  kjak  289794 Jun 13  1995 lisp.gz
+
+$ gunzip lisp.gz
+
+$ ls -l lisp
+-rw-r--r--  1 kjak  kjak  1038692 Jun 13  1995 lisp
+
+$ file lisp
+lisp: a.out little-endian 32-bit demand paged pure executable not stripped
+
+$ chmod u+x lisp
+
+$ ./lisp
+Franz Lisp, Opus 38.92
+-> (status version)
+"Franz Lisp, Opus 38"
+-> (status features)
+(in-c-fasl long-filenames portable i386 ucb string unix Franz franz)
+-> (length (oblist))
+1415
+
+
+--------
+Examples
+--------
+
+Playing around with fexprs:
+
+-> (defun foo fexpr (l) (list (eval (car l)) l))
+foo
+-> (getd 'foo)
+(nlambda (l) (list (eval (car l)) l))
+-> (foo (+ 1 2 3) (error "oops"))
+(6 ((+ 1 2 3) (error "oops")))
+
+
+Playing around with lexprs:
+
+-> (defun bar n (list n (listify n)))
+bar
+-> (getd 'bar)
+(lexpr (n) (list n (listify n)))
+-> (bar 'a 'b 'c)
+(3 (a b c))
+
+
+Playing around with hunks:
+
+-> (defvar myhunk (hunk 1 2 3 'a 'b 'c))
+{1 2 3 a b c}
+-> (hunk-to-list myhunk)
+(1 2 3 a b c)
+-> (car myhunk)
+2
+-> (cdr myhunk)
+1
+-> (cxr 5 myhunk)
+c
+
+
+Playing around with tconcs:
+
+-> (defvar baz (tconc nil 'a))
+((a) a)
+-> (tconc baz 'b)
+((a b) b)
+-> (lconc baz '(c d e f))
+((a b c d e f) f)
+
+
+Playing around with fclosures:
+
+-> (defun c () (setq x (1+ x)))
+c
+-> (defun make-counter () (let ((x 0)) (fclosure '(x) 'c)))
+make-counter
+-> (defvar c1 (make-counter))
+fclosure[2]
+-> (defvar c2 (make-counter))
+fclosure[2]
+-> (funcall c1)
+1
+-> (funcall c1)
+2
+-> (funcall c2)
+1
+-> (funcall c2)
+2
+-> (defvar cs (let ((x 0))
+                (cons (fclosure '(x) 'c) (fclosure '(x) 'c))))
+(fclosure[2] . fclosure[2])
+-> (funcall (car cs))
+1
+-> (funcall (car cs))
+2
+-> (funcall (cdr cs))
+1
+-> (funcall (cdr cs))
+2
+-> (funcall (car cs))
+3
+-> (fclosure-alist (car cs))
+((x . 3))
+-> (fclosure-alist (cdr cs))
+((x . 2))
+-> (symeval-in-fclosure (car cs) 'x)
+3
+-> (symeval-in-fclosure (cdr cs) 'x)
+2
+-> (set-in-fclosure (car cs) 'x 10)
+10
+-> (fclosure-alist (car cs))
+((x . 10))
+-> (funcall (car cs))
+11
+-> (funcall (car cs))
+12
+-> (defvar cl (let ((x 0)) (fclosure-list '(x) 'c '(x) 'c)))
+(fclosure[2] fclosure[2])
+-> (funcall (car cl))
+1
+-> (funcall (car cl))
+2
+-> (funcall (cadr cl))
+3
+-> (funcall (car cl))
+4
+
+
+Playing around with catch/throw:
+
+-> (defun mem* (x l)
+     (if (or (null l) (equal x (car l)))
+         (throw l mytag)
+         (mem* x (cdr l))))
+mem*
+-> (defun mem (x l)
+     (catch (mem* x l) mytag))
+mem
+-> (mem 3 (list 1 2 3 4))
+(3 4)
+-> (mem 5 (list 1 2 3 4))
+nil
+
+
+Playing around with trace:
+
+-> (trace mem mem*)
+[autoload /usr/local/lib/lisp/trace]
+[load /usr/local/lib/lisp/trace.l]
+[load /usr/local/lib/lisp/charmac.l]
+(mem mem*)
+-> (mem 3 (list 1 2 3 4))
+1 <Enter> mem (3 (1 2 3 4))
+|1 <Enter> mem* (3 (1 2 3 4))
+| 2 <Enter> mem* (3 (2 3 4))
+| |3 <Enter> mem* (3 (3 4))
+1 <EXIT>  mem  (3 4)
+(3 4)
+-> (mem 5 (list 1 2 3 4))
+1 <Enter> mem (5 (1 2 3 4))
+|1 <Enter> mem* (5 (1 2 3 4))
+| 2 <Enter> mem* (5 (2 3 4))
+| |3 <Enter> mem* (5 (3 4))
+| | 4 <Enter> mem* (5 (4))
+| | |5 <Enter> mem* (5 nil)
+1 <EXIT>  mem  nil
+nil
+
+
+Playing around with errset:
+
+-> (errset 1)
+(1)
+-> (errset (/ 0))
+Floating Exception
+nil
+-> (errset (/ 0) nil)
+nil
+
+
+------------------
+The Liszt Compiler
+------------------
+
+We can uncompress liszt.gz and get a REPL:
+
+$ ls -l liszt.gz
+-rw-r--r--  1 kjak  kjak  426285 Jun 13  1995 liszt.gz
+
+$ gunzip liszt.gz
+
+$ ls -l liszt
+-rw-r--r--  1 kjak  kjak  1644900 Jun 13  1995 liszt
+
+$ file liszt
+liszt: a.out little-endian 32-bit demand paged pure executable not stripped
+
+$ chmod u+x liszt
+
+$ ./liszt
+Liszt C version 8.39.spottisport [.92]
+-> (status version)
+"Franz Lisp, Opus 38"
+-> (status features)
+(no-global-reg in-c for-c in-c-fasl long-filenames portable i386 ucb string unix Franz franz)
+-> (length (oblist))
+1981
+
+Unfortunately, with the NetBSD setup above, liszt fails to actually
+compile files.  More work needs to be done here!
