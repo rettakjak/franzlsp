@@ -329,5 +329,58 @@ Liszt C version 8.39.spottisport [.92]
 -> (length (oblist))
 1981
 
-Unfortunately, with the NetBSD setup above, liszt fails to actually
-compile files.  More work needs to be done here!
+
+This liszt compiles to C:
+
+$ echo "(defun foo () 1)" >test.l
+
+$ ./liszt -S test.l
+Compilation begins with Liszt C version 8.39.spottisport
+source: test.l, result: test.c
+foo
+%Note: test.l: Compilation complete
+%Note: test.l:  Time: Real: 0:0, CPU: 0:0.00, GC: 0:0.00 for 0 gcs
+
+$ grep -A3 bindspec test.c
+static struct bindspec bindtab[] = {
+        {&(lambda),F00016,"foo"},
+        {0}
+};
+
+
+Autorun is not supported:
+
+$ ./liszt -r test.l
+?Error: nil: : Autorun (-r) not available
+?Error: test.l: : Compilation aborted due to previous errors
+
+
+The same franz.tgz we used before also contains some header files.  If
+we use these then we can actually get an object file:
+
+$ ./liszt test.l
+Compilation begins with Liszt C version 8.39.spottisport
+source: test.l, result: test.o
+foo
+%Note: test.l: Compilation complete
+%Note: test.l:  Time: Real: 0:1, CPU: 0:0.00, GC: 0:0.00 for 0 gcs
+%Note: test.l: Assembly begins
+/tmp/Lzt5127.c:42:1: warning: return type defaults to 'int' [-Wimplicit-int]
+ init()
+ ^
+%Note: test.l: Assembly completed successfully
+
+$ nm test.o
+0000000000000000 t F00016
+                 U Fixzero
+0000000000000000 d bindtab
+                 U clink
+0000000000000006 T init
+0000000000000008 b linker
+                 U lispsys
+0000000000000000 b trans
+
+
+This is basically where I've stopped so far.  More will need to be
+done in order to actually be able to fasl in some generated object
+files and have it work.
