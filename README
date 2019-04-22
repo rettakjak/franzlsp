@@ -9,6 +9,7 @@ The files in the cmu-ai directory are from the CMU AI Repository at
 The file cmu-ai/0.doc describes the rest of the files in the cmu-ai
 directory.
 
+
 The tarball in the fateman directory contains the final university
 release of Franz Lisp (Opus 38.92) for the VAX.  This is from
 Richard J. Fateman's Berkeley homepage where he says "I don't know
@@ -17,12 +18,19 @@ distribution office has closed and they left a copy with me."
 
     https://people.eecs.berkeley.edu/~fateman
 
+The tarball contains a file named lispas and other files named
+opus38.92.aa, opus38.92.ab and so forth.  The file fateman/README
+contains instructions on what to do with these files to actually
+extract the distribution.
+
+
 The Franz Lisp Manual in the manual directory is from the Computer
 History Museum's Software Preservation Group at
 
     http://www.softwarepreservation.net/projects/LISP/franz
 
 The manual describes Opus 38.69 from 1983.
+
 
 Finally, this README file was written by Kris Katterjohn.
 

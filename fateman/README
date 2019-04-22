@@ -1,0 +1,34 @@
+lisp-opus38.92.tar contains the final university release of Franz
+Lisp (Opus 38.92) for the VAX.  This tarball contains a directory
+named lisp which has a file named lispas and other files named
+opus38.92.aa, opus38.92.ab and so forth:
+
+$ tar xf lisp-opus38.92.tar
+
+$ cd lisp
+
+$ ls -l
+total 7968
+-rw-r-----  1 kjak  kjak  110024 Jun 26  1985 lispas
+-rw-r-----  1 kjak  kjak  500022 Jun 26  1985 opus38.92.aa
+-rw-r-----  1 kjak  kjak  500015 Jun 26  1985 opus38.92.ab
+-rw-r-----  1 kjak  kjak  500052 Jun 26  1985 opus38.92.ac
+-rw-r-----  1 kjak  kjak  500004 Jun 26  1985 opus38.92.ad
+-rw-r-----  1 kjak  kjak  500004 Jun 26  1985 opus38.92.ae
+-rw-r-----  1 kjak  kjak  500007 Jun 26  1985 opus38.92.af
+-rw-r-----  1 kjak  kjak  500040 Jun 26  1985 opus38.92.ag
+-rw-r-----  1 kjak  kjak   67976 Jun 26  1985 opus38.92.ah
+
+These opus* files are pieces of a large shell script that will
+actually extract the (main) distribution into the current
+directory.  The lispas file is also a shell script which will
+extract the source for the assembler.  You can run the scripts
+and extract everything like this:
+
+$ cat * | sh
+
+Curiously, some of the files the opus* script produces actually
+contain these instructions on how to run the scripts...
+
+Kris Katterjohn
+2019-04-22
