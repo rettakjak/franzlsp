@@ -43,6 +43,13 @@ These are the steps that I (Kris Katterjohn) performed to get an old
 Franz Lisp interpreter executable from 1994 running directly on NetBSD
 8.0 (which is the most recently released version as I'm writing this).
 
+The steps consisted of compiling a kernel with some compatibility
+options enabled, changing a single sysctl setting and then just
+installing some library files where the interpreter expects them to be.
+(I'm writing this in April 2019, which is over 25 years after the
+interpreter executable was released.  The fact that we can still run
+this directly is just plain cool, and I was happy to see it working.)
+
 I'm not the first person to get this running.  In particular, it seems
 that Christos Zoulas and Kamil Rytarowski of NetBSD have had this Franz
 Lisp interpreter running on their NetBSD boxes over the last few years.
