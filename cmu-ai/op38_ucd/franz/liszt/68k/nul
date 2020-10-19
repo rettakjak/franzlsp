@@ -1,0 +1,4237 @@
+	.globl	F00083	|(fcn lambda cc-and)
+F00083:
+	link	a6,#-L00085
+	tstb	sp@(-132)
+	moveml	#L00086,sp@
+	movl	#_nilatom,d7
+	lea	linker,a3
+	movl	_lbot,a4
+	lea	a4@,a2
+L00084:
+	lea	a2@,a5	|(calling d-genlab)
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+0,a5
+	jbsr	a5@
+	lea	a2@,a2
+	movl	d0,a2@+
+	movl	d7,a2@+
+	movl	a3@,a5
+	movl	a5@,a0
+	movl	a0@,d0
+	cmpl	a0@,d7
+	jne	L00087
+	movl	a3@(4),d0
+L00087:
+	movl	d0,a2@+
+	movl	a3@(8),a5
+	movl	a5@,a0
+	cmpl	a0@,d7
+	jne	L00090
+	movl	d7,a2@+	|(calling d-exp)
+	|(beginning do)
+	movl	a4@,a2@+
+	jbsr	_qcons
+	movl	d0,a2@+
+	movl	d7,a2@+
+	movl	d7,a2@+
+	movl	a4@(8),a2@+
+	movl	_bnp,a1
+	movl	a3@(12),a5
+	movl	a5@,a1@+
+	movl	a3@(12),a1@+
+	movl	a3@(12),a5
+	movl	a4@(20),a5@
+	movl	a3@(16),a5
+	movl	a5@,a1@+
+	movl	a3@(16),a1@+
+	movl	a3@(16),a5
+	movl	a4@(16),a5@
+	movl	a3@(8),a5
+	movl	a5@,a1@+
+	movl	a3@(8),a1@+
+	movl	a3@(8),a5
+	movl	a4@(12),a5@
+	movl	a1,_bnp
+L00091:
+	movl	a4@(24),a5
+	cmpl	a5@,d7
+	jne	L00092
+	movl	a4@(24),a1
+	movl	a1@(4),d0
+	jra	L00093
+L00092:
+	movl	a4@(24),a1	|(calling d-exp)
+	movl	a1@(4),a2@+
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+8,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	a4@(24),a5
+	movl	a5@,a4@(24)
+	jra	L00091
+L00093:
+	movl	_bnp,a1
+	movl	a1@(-4),a5
+	movl	a1@(-8),a5@
+	movl	a1@(-12),a5
+	movl	a1@(-16),a5@
+	movl	a1@(-20),a5
+	movl	a1@(-24),a5@
+	movl	a1,_bnp
+	subl	#24,_bnp
+	subl	#16,a2
+	movl	d0,a2@+
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+8,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	a3@(16),a5
+	cmpl	a5@,d7
+	jeq	L00095
+	lea	a2@,a5	|(calling d-genlab)
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+0,a5
+	jbsr	a5@
+	lea	a2@,a2
+	movl	d0,a4@(4)
+	movl	a4@(4),a2@+	|(calling e-goto)
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+16,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	a4@,a2@+	|(calling e-label)
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+24,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	a3@(20),a2@+	|(calling d-move)
+	movl	a3@(16),a5
+	movl	a5@,a2@+
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+32,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+	movl	a4@(4),a2@+	|(calling e-label)
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+24,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	jra	L00094
+L00095:
+	movl	a4@,a2@+	|(calling e-label)
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+24,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+L00094:
+	jra	L00089
+L00090:
+	movl	a3@(16),a5
+	cmpl	a5@,d7
+	jne	L00097
+	movl	a3@(8),a5
+	movl	a5@,a0
+	movl	a0@,a4@
+	jra	L00096
+L00097:
+	movl	d7,d0
+L00096:
+	movl	d7,a2@+	|(calling d-exp)
+	|(beginning do)
+	movl	a4@,a2@+
+	jbsr	_qcons
+	movl	d0,a2@+
+	movl	d7,a2@+
+	movl	d7,a2@+
+	movl	a4@(8),a2@+
+	movl	_bnp,a1
+	movl	a3@(12),a5
+	movl	a5@,a1@+
+	movl	a3@(12),a1@+
+	movl	a3@(12),a5
+	movl	a4@(20),a5@
+	movl	a3@(16),a5
+	movl	a5@,a1@+
+	movl	a3@(16),a1@+
+	movl	a3@(16),a5
+	movl	a4@(16),a5@
+	movl	a3@(8),a5
+	movl	a5@,a1@+
+	movl	a3@(8),a1@+
+	movl	a3@(8),a5
+	movl	a4@(12),a5@
+	movl	a1,_bnp
+L00098:
+	movl	a4@(24),a5
+	cmpl	a5@,d7
+	jne	L00099
+	movl	a4@(24),a1
+	movl	a1@(4),d0
+	jra	L00100
+L00099:
+	movl	a4@(24),a1	|(calling d-exp)
+	movl	a1@(4),a2@+
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+8,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	a4@(24),a5
+	movl	a5@,a4@(24)
+	jra	L00098
+L00100:
+	movl	_bnp,a1
+	movl	a1@(-4),a5
+	movl	a1@(-8),a5@
+	movl	a1@(-12),a5
+	movl	a1@(-16),a5@
+	movl	a1@(-20),a5
+	movl	a1@(-24),a5@
+	movl	a1,_bnp
+	subl	#24,_bnp
+	subl	#16,a2
+	movl	d0,a2@+
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+8,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	a3@(16),a5
+	cmpl	a5@,d7
+	jeq	L00102
+	lea	a2@,a5	|(calling d-genlab)
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+0,a5
+	jbsr	a5@
+	lea	a2@,a2
+	movl	d0,a4@(4)
+	movl	a4@(4),a2@+	|(calling e-goto)
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+16,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	a4@,a2@+	|(calling e-label)
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+24,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	a3@(20),a2@+	|(calling d-move)
+	movl	a3@(16),a5
+	movl	a5@,a2@+
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+32,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+	movl	a3@(8),a5	|(calling e-goto)
+	movl	a5@,a0
+	movl	a0@,a2@+
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+16,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	a4@(4),a2@+	|(calling e-label)
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+24,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	jra	L00101
+L00102:
+	movl	d7,d0
+L00101:
+L00089:
+	subl	#12,a2	|(calling d-clearreg)
+	lea	a2@,a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+40,a5
+	jbsr	a5@
+	lea	a2@,a2
+	moveml	a6@(-20),#L00086
+	unlk	a6
+	rts
+L00086 = 15488
+L00085 = 20
+	.globl	F00103	|(fcn lambda cc-arg)
+F00103:
+	link	a6,#-L00105
+	tstb	sp@(-132)
+	moveml	#L00106,sp@
+	movl	#_nilatom,d7
+	lea	linker,a3
+	movl	_lbot,a4
+	lea	a4@,a2
+L00104:
+	movl	d7,a2@+
+	movl	d7,a2@+
+	lea	a2@,a5	|(calling d-genlab)
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+0,a5
+	jbsr	a5@
+	lea	a2@,a2
+	movl	d0,a4@
+	lea	a2@,a5	|(calling d-genlab)
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+0,a5
+	jbsr	a5@
+	lea	a2@,a2
+	movl	d0,a4@(4)
+	movl	a3@(28),d6
+	movl	a3@(24),a5
+	cmpl	a5@,d6
+	jeq	L00110
+	movl	a3@(32),a2@+	|(calling patom)
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+48,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	a3@(36),a2@+
+	movl	_bnp,a1
+	movl	a3@(40),a5
+	movl	a5@,a1@+
+	movl	a3@(40),a1@+
+	movl	a3@(40),a5
+	movl	a4@(8),a5@
+	movl	a1,_bnp
+	movl	a3@(44),a5	|(calling patom)
+	movl	a5@,a2@+
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+48,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	_bnp,a1
+	movl	a1@(-4),a5
+	movl	a1@(-8),a5@
+	movl	a1,_bnp
+	subql	#8,_bnp
+	subql	#4,a2	|(calling patom)
+	movl	a3@(48),a2@+
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+48,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	a3@(36),a2@+
+	movl	_bnp,a1
+	movl	a3@(40),a5
+	movl	a5@,a1@+
+	movl	a3@(40),a1@+
+	movl	a3@(40),a5
+	movl	a4@(8),a5@
+	movl	a1,_bnp
+	movl	a3@(52),a5	|(calling patom)
+	movl	a5@,a2@+
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+48,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	_bnp,a1
+	movl	a1@(-4),a5
+	movl	a1@(-8),a5@
+	movl	a1,_bnp
+	subql	#8,_bnp
+	subql	#4,a2	|(calling patom)
+	movl	a3@(56),a2@+
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+48,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	a3@(60),a2@+	|(calling patom)
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+48,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	lea	a2@,a5	|(calling terpri)
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+56,a5
+	jbsr	a5@
+	lea	a2@,a2
+	movl	a3@(64),a5
+	cmpl	#_nilatom+0x1400+4088,a5@
+	jle	L00111
+	movl	a3@(64),a5
+	movl	a5@,a0
+	jbsr	_qoneplus
+	movl	a3@(64),a5
+	movl	d0,a5@
+	jra	L00112
+L00111:
+	movl	a3@(64),a5
+	movl	a5@,d0
+	addql	#4,d0
+	movl	a3@(64),a5
+	movl	d0,a5@
+L00112:
+	movl	d7,sp@-
+	movl	a3@(68),sp@-
+	movl	#3,sp@-
+	jbsr	_Inonlocalgo
+	jra	L00109
+L00110:
+	movl	d7,d0
+L00109:
+	movl	a3@,a5	|(calling length)
+	movl	a5@,a0
+	movl	a0@,a2@+
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+64,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	cmpl	#_nilatom+0x1400+8,d0
+	jne	L00114
+	movl	a3@(72),a5
+	cmpl	a5@,d7
+	jeq	L00114
+	movl	a3@(76),a5
+	movl	a5@,a0
+	movl	a0@(4),a2@+
+	movl	a3@,a5
+	movl	a5@,a0
+	movl	a0@,a1
+	movl	a1@(4),d0
+	movl	a2@-,d6
+	cmpl	d0,d6
+	jeq	L00117
+	movl	a3@(32),a2@+	|(calling patom)
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+48,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	a3@(36),a2@+
+	movl	_bnp,a1
+	movl	a3@(40),a5
+	movl	a5@,a1@+
+	movl	a3@(40),a1@+
+	movl	a3@(40),a5
+	movl	a4@(8),a5@
+	movl	a1,_bnp
+	movl	a3@(44),a5	|(calling patom)
+	movl	a5@,a2@+
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+48,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	_bnp,a1
+	movl	a1@(-4),a5
+	movl	a1@(-8),a5@
+	movl	a1,_bnp
+	subql	#8,_bnp
+	subql	#4,a2	|(calling patom)
+	movl	a3@(48),a2@+
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+48,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	a3@(36),a2@+
+	movl	_bnp,a1
+	movl	a3@(40),a5
+	movl	a5@,a1@+
+	movl	a3@(40),a1@+
+	movl	a3@(40),a5
+	movl	a4@(8),a5@
+	movl	a1,_bnp
+	movl	a3@(52),a5	|(calling patom)
+	movl	a5@,a2@+
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+48,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	_bnp,a1
+	movl	a1@(-4),a5
+	movl	a1@(-8),a5@
+	movl	a1,_bnp
+	subql	#8,_bnp
+	subql	#4,a2	|(calling patom)
+	movl	a3@(56),a2@+
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+48,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	a3@(80),a2@+	|(calling patom)
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+48,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	a3@(36),a2@+
+	movl	_bnp,a1
+	movl	a3@(40),a5
+	movl	a5@,a1@+
+	movl	a3@(40),a1@+
+	movl	a3@(40),a5
+	movl	a4@(8),a5@
+	movl	a1,_bnp
+	movl	a3@,a5	|(calling patom)
+	movl	a5@,a2@+
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+48,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	_bnp,a1
+	movl	a1@(-4),a5
+	movl	a1@(-8),a5@
+	movl	a1,_bnp
+	subql	#8,_bnp
+	subql	#4,a2	|(calling terpri)
+	lea	a2@,a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+56,a5
+	jbsr	a5@
+	lea	a2@,a2
+	movl	a3@(64),a5
+	cmpl	#_nilatom+0x1400+4088,a5@
+	jle	L00118
+	movl	a3@(64),a5
+	movl	a5@,a0
+	jbsr	_qoneplus
+	movl	a3@(64),a5
+	movl	d0,a5@
+	jra	L00119
+L00118:
+	movl	a3@(64),a5
+	movl	a5@,d0
+	addql	#4,d0
+	movl	a3@(64),a5
+	movl	d0,a5@
+L00119:
+	movl	d7,sp@-
+	movl	a3@(68),sp@-
+	movl	#3,sp@-
+	jbsr	_Inonlocalgo
+	jra	L00116
+L00117:
+	movl	a3@,a5
+	movl	a5@,a0
+	movl	a3@,a5
+	movl	a0@,a5@
+L00116:
+	jra	L00113
+L00114:
+	movl	d7,d0
+L00113:
+	movl	a3@(16),a5
+	cmpl	a5@,d7
+	jne	L00121
+	movl	a3@(8),a5
+	cmpl	a5@,d7
+	jne	L00121
+	movl	d7,d0
+	jra	L00108
+|	jra	L00120
+L00121:
+	movl	d7,d0
+L00120:
+	movl	a3@,a5
+	movl	a5@,a0
+	movl	a0@,a1
+	movl	a1@(4),d0
+	subl	d7,d0
+	moveq	#9,d1
+	asrl	d1,d0
+	lea	_typetable+1,a5
+	addl	d0,a5
+	movb	a5@,d0
+	extw	d0
+	extl	d0
+	moveq	#1,d1
+	asll	d0,d1
+	movl	d1,d0
+	andw	#516,d0
+	jeq	L00124
+	movl	a3@,a5
+	movl	a5@,a0
+	movl	a0@,a0
+	movl	a0@(4),a0
+	movl	a0@,d0
+	cmpl	#0,d0
+	jle	L00124
+	movl	a3@(84),a2@+	|(calling d-move)
+	movl	a3@,a5
+	movl	a5@,a0
+	movl	a0@,a1
+	movl	a1@(4),a2@+
+	movl	d7,a2@+
+	jbsr	_qcons
+	movl	d0,a2@+
+	jbsr	_qcons
+	movl	d0,a2@+
+	movl	a3@(88),a2@+
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+32,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+	movl	a3@(92),a2@+	|(calling e-sub)
+	movl	a3@(96),a2@+
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+72,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+	movl	a3@(16),a5
+	cmpl	a5@,d7
+	jeq	L00129
+	movl	a3@(100),a2@+	|(calling e-move)
+	movl	a3@(16),a5	|(calling e-cvt)
+	movl	a5@,a2@+
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+80,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	d0,a2@+
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+88,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+	jra	L00128
+L00129:
+	movl	d7,d0
+L00128:
+	movl	a3@(8),a5
+	cmpl	a5@,d7
+	jeq	L00131
+	movl	a3@(20),a2@+	|(calling e-cmp)
+	|(calling e-cvt)
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+80,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	d0,a2@+
+	movl	a3@(104),a2@+
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+96,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+	jra	L00130
+L00131:
+	movl	d7,d0
+L00130:
+	lea	a2@,a5	|(calling d-handlecc)
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+104,a5
+	jbsr	a5@
+	lea	a2@,a2
+	jra	L00123
+L00124:
+	movl	a3@,a5
+	movl	a5@,a0
+	movl	a0@,a1
+	cmpl	a1@(4),d7
+	jeq	L00133
+	movl	a3@,a5
+	movl	a5@,a0
+	movl	a0@,a0
+	movl	a0@(4),d0
+	subl	d7,d0
+	moveq	#9,d1
+	asrl	d1,d0
+	lea	_typetable+1,a5
+	addl	d0,a5
+	movb	a5@,d0
+	extw	d0
+	extl	d0
+	moveq	#1,d1
+	asll	d0,d1
+	movl	d1,d0
+	andw	#516,d0
+	jeq	L00132
+	movl	#_nilatom+0x1400+0,a2@+
+	movl	a3@,a5
+	movl	a5@,a0
+	movl	a0@,a1
+	movl	a1@(4),d0
+	movl	a2@-,d6
+	cmpl	d0,d6
+	jne	L00132
+L00133:
+	movl	a3@(16),a5
+	cmpl	a5@,d7
+	jeq	L00138
+	movl	a3@(108),a2@+	|(calling e-move)
+	movl	a3@(16),a5	|(calling e-cvt)
+	movl	a5@,a2@+
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+80,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	d0,a2@+
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+88,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+	jra	L00137
+L00138:
+	movl	d7,d0
+L00137:
+	movl	a3@(8),a5
+	movl	a5@,a0
+	cmpl	a0@(4),d7
+	jeq	L00140
+	movl	a3@(8),a5	|(calling e-goto)
+	movl	a5@,a0
+	movl	a0@(4),a2@+
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+16,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	jra	L00139
+L00140:
+	movl	d7,d0
+L00139:
+	jra	L00123
+L00132:
+	movl	a3@(88),a2@+
+	movl	d7,a2@+
+	movl	a4@,a2@+
+	jbsr	_qcons
+	movl	d0,a2@+
+	movl	d7,a2@+
+	movl	_bnp,a1
+	movl	a3@(12),a5
+	movl	a5@,a1@+
+	movl	a3@(12),a1@+
+	movl	a3@(12),a5
+	movl	a4@(16),a5@
+	movl	a3@(8),a5
+	movl	a5@,a1@+
+	movl	a3@(8),a1@+
+	movl	a3@(8),a5
+	movl	a4@(12),a5@
+	movl	a3@(16),a5
+	movl	a5@,a1@+
+	movl	a3@(16),a1@+
+	movl	a3@(16),a5
+	movl	a4@(8),a5@
+	movl	a1,_bnp
+	movl	a3@,a5	|(calling d-exp)
+	movl	a5@,a0
+	movl	a0@,a1
+	movl	a1@(4),a2@+
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+8,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	_bnp,a1
+	movl	a1@(-4),a5
+	movl	a1@(-8),a5@
+	movl	a1@(-12),a5
+	movl	a1@(-16),a5@
+	movl	a1@(-20),a5
+	movl	a1@(-24),a5@
+	movl	a1,_bnp
+	subl	#24,_bnp
+	subl	#12,a2	|(calling e-cmp)
+	|(calling e-cvt)
+	movl	a3@(88),a2@+
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+80,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	d0,a2@+
+	movl	a3@(112),a2@+	|(calling e-cvt)
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+80,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	d0,a2@+
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+96,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+	movl	a4@,a2@+	|(calling e-gotonil)
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+112,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	a3@(116),a2@+	|(calling e-sub)
+	movl	a3@(96),a2@+
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+72,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+	movl	a3@(16),a5
+	cmpl	a5@,d7
+	jeq	L00142
+	movl	a3@(120),a2@+	|(calling e-move)
+	movl	a3@(16),a5	|(calling e-cvt)
+	movl	a5@,a2@+
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+80,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	d0,a2@+
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+88,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+	jra	L00141
+L00142:
+	movl	d7,d0
+L00141:
+	movl	a3@(8),a5
+	cmpl	a5@,d7
+	jeq	L00144
+	movl	a3@(20),a2@+	|(calling e-cmp)
+	|(calling e-cvt)
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+80,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	d0,a2@+
+	movl	a3@(124),a2@+
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+96,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+	jra	L00143
+L00144:
+	movl	d7,d0
+L00143:
+	lea	a2@,a5	|(calling d-handlecc)
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+104,a5
+	jbsr	a5@
+	lea	a2@,a2
+	movl	a4@(4),a2@+	|(calling e-goto)
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+16,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	a4@,a2@+	|(calling e-label)
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+24,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	a3@(16),a5
+	cmpl	a5@,d7
+	jeq	L00146
+	movl	a3@(128),a2@+	|(calling e-move)
+	movl	a3@(16),a5	|(calling e-cvt)
+	movl	a5@,a2@+
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+80,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	d0,a2@+
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+88,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+	movl	a3@(8),a5
+	cmpl	a5@,d7
+	jeq	L00148
+	movl	a3@(20),a2@+	|(calling e-cmp)
+	|(calling e-cvt)
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+80,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	d0,a2@+
+	movl	a3@(132),a2@+
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+96,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+	jra	L00147
+L00148:
+	movl	d7,d0
+L00147:
+	lea	a2@,a5	|(calling d-handlecc)
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+104,a5
+	jbsr	a5@
+	lea	a2@,a2
+	jra	L00145
+L00146:
+	movl	a3@(8),a5
+	movl	a5@,a0
+	cmpl	a0@(4),d7
+	jeq	L00149
+	movl	a3@(8),a5	|(calling e-goto)
+	movl	a5@,a0
+	movl	a0@(4),a2@+
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+16,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	jra	L00145
+L00149:
+	movl	d7,d0
+L00145:
+	movl	a4@(4),a2@+	|(calling e-label)
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+24,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+L00123:
+	movl	d7,d0
+L00108:
+	subql	#8,a2
+	moveml	a6@(-24),#L00106
+	unlk	a6
+	rts
+L00106 = 15552
+L00105 = 24
+	.globl	F00150	|(fcn lambda c-assembler-code)
+F00150:
+	link	a6,#-L00152
+	tstb	sp@(-132)
+	moveml	#L00153,sp@
+	movl	#_nilatom,d7
+	lea	linker,a3
+	movl	_lbot,a4
+	lea	a4@,a2
+L00151:
+	movl	a3@(136),a5
+	movl	d7,a5@
+	movl	a3@(140),a5
+	cmpl	a5@,d7
+	jeq	L00155
+	movl	a3@(148),a2@+
+	movl	a3@(144),a5
+	movl	a5@,a2@+
+	jbsr	_qcons
+	movl	a3@(144),a5
+	movl	d0,a5@
+	jra	L00154
+L00155:
+	movl	d7,d0
+L00154:
+	movl	a3@,a5	|(beginning do)
+	movl	a5@,a0
+	movl	a0@,a2@+
+L00156:
+	cmpl	a4@,d7
+	jne	L00157
+	movl	d7,d0
+	jra	L00158
+L00157:
+	movl	a4@,a1	|(calling e-write1)
+	movl	a1@(4),a2@+
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+120,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	a4@,a5
+	movl	a5@,a4@
+	jra	L00156
+L00158:
+	subql	#4,a2
+	movl	a3@(140),a5
+	cmpl	a5@,d7
+	jeq	L00160
+	movl	a3@(152),a2@+
+	movl	a3@(144),a5
+	movl	a5@,a2@+
+	jbsr	_qcons
+	movl	a3@(144),a5
+	movl	d0,a5@
+	movl	a3@(144),a5
+	movl	a5@,d0
+	jra	L00159
+L00160:
+	movl	d7,d0
+L00159:
+	moveml	a6@(-20),#L00153
+	unlk	a6
+	rts
+L00153 = 15488
+L00152 = 20
+	.globl	F00161	|(fcn lambda cm-assq)
+F00161:
+	link	a6,#-L00163
+	tstb	sp@(-132)
+	moveml	#L00164,sp@
+	movl	#_nilatom,d7
+	lea	linker,a3
+	movl	_lbot,a4
+	lea	a4@,a2
+L00162:
+	movl	a3@(156),a2@+
+	movl	a3@(160),a2@+
+	movl	a3@,a5
+	movl	a5@,a0
+	movl	a0@,a1
+	movl	a1@(4),a2@+
+	movl	d7,a2@+
+	jbsr	_qcons
+	movl	d0,a2@+
+	jbsr	_qcons
+	movl	d0,a2@+
+	movl	a3@(164),a2@+
+	movl	a3@,a5
+	movl	a5@,a0
+	movl	a0@,a5
+	movl	a5@,a1
+	movl	a1@(4),a2@+
+	movl	a3@(168),a2@+
+	jbsr	_qcons
+	movl	d0,a2@+
+	jbsr	_qcons
+	movl	d0,a2@+
+	movl	d7,a2@+
+	jbsr	_qcons
+	movl	d0,a2@+
+	jbsr	_qcons
+	movl	d0,a2@+
+	movl	a3@(172),a2@+
+	jbsr	_qcons
+	movl	d0,a2@+
+	jbsr	_qcons
+	moveml	a6@(-20),#L00164
+	unlk	a6
+	rts
+L00164 = 15488
+L00163 = 20
+	.globl	F00165	|(fcn lambda cc-atom)
+F00165:
+	link	a6,#-L00167
+	tstb	sp@(-132)
+	moveml	#L00168,sp@
+	movl	#_nilatom,d7
+	lea	linker,a3
+	movl	_lbot,a4
+	lea	a4@,a2
+L00166:
+	movl	a3@,a5	|(calling d-typecmplx)
+	movl	a5@,a0
+	movl	a0@,a1
+	movl	a1@(4),a2@+
+	movl	a3@(176),a2@+
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+128,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+	moveml	a6@(-20),#L00168
+	unlk	a6
+	rts
+L00168 = 15488
+L00167 = 20
+	.globl	F00169	|(fcn lambda c-bcdcall)
+F00169:
+	link	a6,#-L00171
+	tstb	sp@(-132)
+	moveml	#L00172,sp@
+	movl	#_nilatom,d7
+	lea	linker,a3
+	movl	_lbot,a4
+	lea	a4@,a2
+L00170:
+	movl	#_nilatom+0x1400+4,a2@+	|(calling d-callbig)
+	movl	a3@,a5
+	movl	a5@,a0
+	movl	a0@,a2@+
+	movl	a3@(180),a5
+	movl	a5@,a2@+
+	lea	a2@(-12),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+136,a5
+	jbsr	a5@
+	lea	a2@(-12),a2
+	moveml	a6@(-20),#L00172
+	unlk	a6
+	rts
+L00172 = 15488
+L00171 = 20
+	.globl	F00173	|(fcn lambda cc-bcdp)
+F00173:
+	link	a6,#-L00175
+	tstb	sp@(-132)
+	moveml	#L00176,sp@
+	movl	#_nilatom,d7
+	lea	linker,a3
+	movl	_lbot,a4
+	lea	a4@,a2
+L00174:
+	movl	a3@,a5	|(calling d-typesimp)
+	movl	a5@,a0
+	movl	a0@,a1
+	movl	a1@(4),a2@+
+	movl	a3@(184),a2@+
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+144,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+	moveml	a6@(-20),#L00176
+	unlk	a6
+	rts
+L00176 = 15488
+L00175 = 20
+	.globl	F00177	|(fcn lambda cc-bigp)
+F00177:
+	link	a6,#-L00179
+	tstb	sp@(-132)
+	moveml	#L00180,sp@
+	movl	#_nilatom,d7
+	lea	linker,a3
+	movl	_lbot,a4
+	lea	a4@,a2
+L00178:
+	movl	a3@,a5	|(calling d-typesimp)
+	movl	a5@,a0
+	movl	a0@,a1
+	movl	a1@(4),a2@+
+	movl	a3@(188),a2@+
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+144,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+	moveml	a6@(-20),#L00180
+	unlk	a6
+	rts
+L00180 = 15488
+L00179 = 20
+	.globl	F00181	|(fcn lambda c-*catch)
+F00181:
+	link	a6,#-L00183
+	tstb	sp@(-132)
+	moveml	#L00184,sp@
+	movl	#_nilatom,d7
+	lea	linker,a3
+	movl	_lbot,a4
+	lea	a4@,a2
+L00182:
+	movl	a3@(88),a2@+
+	movl	d7,a2@+
+	movl	d7,a2@+
+	lea	a2@,a5	|(calling d-genlab)
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+0,a5
+	jbsr	a5@
+	lea	a2@,a2
+	movl	d0,a2@+
+	lea	a2@,a5	|(calling d-genlab)
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+0,a5
+	jbsr	a5@
+	lea	a2@,a2
+	movl	d0,a2@+
+	movl	_bnp,a1
+	movl	a3@(12),a5
+	movl	a5@,a1@+
+	movl	a3@(12),a1@+
+	movl	a3@(12),a5
+	movl	a4@(8),a5@
+	movl	a3@(8),a5
+	movl	a5@,a1@+
+	movl	a3@(8),a1@+
+	movl	a3@(8),a5
+	movl	a4@(4),a5@
+	movl	a3@(16),a5
+	movl	a5@,a1@+
+	movl	a3@(16),a1@+
+	movl	a3@(16),a5
+	movl	a4@,a5@
+	movl	a1,_bnp
+	movl	a3@,a5	|(calling d-exp)
+	movl	a5@,a0
+	movl	a0@,a1
+	movl	a1@(4),a2@+
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+8,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	#_nilatom+0x1400+8,a2@+	|(calling d-pushframe)
+	movl	a3@(88),a2@+
+	movl	a3@(20),a2@+
+	lea	a2@(-12),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+152,a5
+	jbsr	a5@
+	lea	a2@(-12),a2
+	movl	d7,a2@+
+	movl	a3@(192),a5
+	movl	a5@,a2@+
+	jbsr	_qcons
+	movl	a3@(192),a5
+	movl	d0,a5@
+	movl	a3@(196),a2@+	|(calling e-write2)
+	movl	a3@(200),a2@+
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+160,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+	movl	a3@(204),a2@+	|(calling e-write2)
+	movl	a4@(16),a2@+
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+160,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+	movl	a3@(208),a2@+	|(calling e-move)
+	movl	a3@(88),a2@+	|(calling e-cvt)
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+80,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	d0,a2@+
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+88,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+	movl	a3@(212),a2@+	|(calling e-write2)
+	movl	a4@(12),a2@+
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+160,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+	movl	a4@(16),a2@+	|(calling e-label)
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+24,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	a3@,a5	|(calling d-exp)
+	movl	a5@,a0
+	movl	a0@,a5
+	movl	a5@,a1
+	movl	a1@(4),a2@+
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+8,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	a4@(12),a2@+	|(calling e-label)
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+24,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	lea	a2@,a5	|(calling d-popframe)
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+168,a5
+	jbsr	a5@
+	lea	a2@,a2
+	movl	a3@(216),a5
+	movl	a5@,a0
+	movl	a3@(216),a5
+	movl	a0@,a5@
+	movl	a3@(192),a5
+	movl	a5@,a0
+	movl	a3@(192),a5
+	movl	a0@,a5@
+	lea	a2@,a5	|(calling d-clearreg)
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+40,a5
+	jbsr	a5@
+	lea	a2@,a2
+	movl	_bnp,a1
+	movl	a1@(-4),a5
+	movl	a1@(-8),a5@
+	movl	a1@(-12),a5
+	movl	a1@(-16),a5@
+	movl	a1@(-20),a5
+	movl	a1@(-24),a5@
+	movl	a1,_bnp
+	subl	#24,_bnp
+	subl	#20,a2
+	moveml	a6@(-20),#L00184
+	unlk	a6
+	rts
+L00184 = 15488
+L00183 = 20
+	.globl	F00185	|(fcn lambda d-pushframe)
+F00185:
+	link	a6,#-L00187
+	tstb	sp@(-132)
+	moveml	#L00188,sp@
+	movl	#_nilatom,d7
+	lea	linker,a3
+	movl	_lbot,a4
+	lea	a4@(12),a2
+L00186:
+	movl	a4@(8),a2@+	|(calling e-move)
+	|(calling e-cvt)
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+80,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	d0,a2@+
+	movl	a3@(220),a2@+
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+88,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+	movl	a4@(4),a2@+	|(calling e-move)
+	|(calling e-cvt)
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+80,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	d0,a2@+
+	movl	a3@(220),a2@+
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+88,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+	movl	a3@(224),a2@+	|(calling e-move)
+	movl	a4@,a2@+
+	movl	d7,a2@+
+	jbsr	_qcons
+	movl	d0,a2@+
+	jbsr	_qcons
+	movl	d0,a2@+
+	movl	a3@(220),a2@+
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+88,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+	movl	a3@(228),a5
+	cmpl	a5@,d7
+	jne	L00190
+	movl	a3@(232),a2@+	|(calling e-move)
+	movl	a3@(236),a2@+
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+88,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+	movl	a3@(232),a2@+	|(calling e-move)
+	movl	a3@(240),a2@+
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+88,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+	jra	L00189
+L00190:
+	movl	d7,d0
+L00189:
+	movl	a3@(244),a2@+	|(calling e-write2)
+	movl	a3@(248),a2@+
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+160,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+	movl	a3@(88),a2@+	|(calling e-move)
+	|(calling e-cvt)
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+80,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	d0,a2@+
+	movl	a3@(252),a2@+
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+88,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+	movl	a3@(256),a2@+
+	movl	a3@(216),a5
+	movl	a5@,a2@+
+	jbsr	_qcons
+	movl	a3@(216),a5
+	movl	d0,a5@
+	movl	a3@(216),a5
+	movl	a5@,d0
+	subl	#12,a2
+	moveml	a6@(-20),#L00188
+	unlk	a6
+	rts
+L00188 = 15488
+L00187 = 20
+	.globl	F00191	|(fcn lambda d-popframe)
+F00191:
+	link	a6,#-L00193
+	tstb	sp@(-132)
+	moveml	#L00194,sp@
+	movl	#_nilatom,d7
+	lea	linker,a3
+	movl	_lbot,a4
+	lea	a4@,a2
+L00192:
+	movl	a3@(260),a2@+
+	movl	a3@(252),a2@+	|(calling e-move)
+	movl	a4@,a2@+
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+88,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+	movl	a3@(264),a2@+	|(calling e-move)
+	movl	a4@,a2@+
+	movl	d7,a2@+
+	jbsr	_qcons
+	movl	d0,a2@+
+	jbsr	_qcons
+	movl	d0,a2@+
+	movl	a3@(252),a2@+
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+88,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+	movl	a3@(268),a2@+	|(calling e-write3)
+	movl	a4@,a2@+
+	movl	a3@(272),a2@+
+	lea	a2@(-12),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+176,a5
+	jbsr	a5@
+	lea	a2@(-12),a2
+	movl	a3@(224),a2@+	|(calling e-add)
+	movl	#_nilatom+0x1400+12,a2@+	|(calling *)
+	movl	#_nilatom+0x1400+16,a2@+
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+184,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+	movl	d0,a0
+	movl	a0@,d2
+	movl	d2,sp@-
+	movl	#_nilatom+0x1400+20,a2@+	|(calling *)
+	movl	#_nilatom+0x1400+16,a2@+
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+184,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+	movl	d0,a0
+	movl	a0@,d2
+	movl	sp@+,d0
+	addl	d2,d0
+	movl	d0,d2
+	movl	d2,d0
+	asll	#2,d0
+	addl	#_nilatom+0x1400+0,d0
+	movl	d2,d1
+	subl	#1024,d1
+	jcs	L00195
+	jbsr	_qnewint
+L00195:
+	movl	d0,a2@+
+	movl	d7,a2@+
+	jbsr	_qcons
+	movl	d0,a2@+
+	jbsr	_qcons
+	movl	d0,a2@+
+	movl	a3@(272),a2@+
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+192,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+	subql	#4,a2
+	moveml	a6@(-24),#L00194
+	unlk	a6
+	rts
+L00194 = 15492
+L00193 = 24
+	.globl	F00196	|(fcn lambda c-cond)
+F00196:
+	link	a6,#-L00198
+	tstb	sp@(-132)
+	moveml	#L00199,sp@
+	movl	#_nilatom,d7
+	lea	linker,a3
+	movl	_lbot,a4
+	lea	a4@,a2
+L00197:
+	movl	a3@(140),a5
+	cmpl	a5@,d7
+	jeq	L00201
+	movl	a3@(276),a2@+
+	movl	a3@(144),a5
+	movl	a5@,a2@+
+	jbsr	_qcons
+	movl	a3@(144),a5
+	movl	d0,a5@
+	jra	L00200
+L00201:
+	movl	d7,d0
+L00200:
+	movl	a3@,a5	|(beginning do)
+	movl	a5@,a0
+	movl	a0@,a2@+
+	lea	a2@,a5	|(calling d-genlab)
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+0,a5
+	jbsr	a5@
+	lea	a2@,a2
+	movl	d0,a2@+
+	movl	d7,a2@+
+	movl	d7,a2@+
+	movl	d7,a2@+
+L00202:
+	cmpl	a4@,d7
+	jeq	L00205
+	cmpl	a4@(16),d7
+	jeq	L00203
+L00205:
+	cmpl	a4@(16),d7
+	jne	L00207
+	movl	a3@(20),a2@+	|(calling d-move)
+	movl	a3@(88),a2@+
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+32,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+	jra	L00206
+L00207:
+	movl	d7,d0
+L00206:
+	movl	a4@(4),a2@+	|(calling e-label)
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+24,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	jra	L00204
+L00203:
+	movl	a4@,a1
+	movl	a1@(4),d0
+	subl	d7,d0
+	moveq	#9,d1
+	asrl	d1,d0
+	lea	_typetable+1,a5
+	addl	d0,a5
+	movb	a5@,d0
+	extw	d0
+	extl	d0
+	moveq	#1,d1
+	asll	d0,d1
+	movl	d1,d0
+	andw	#1783,d0
+	jeq	L00209
+	movl	a3@(32),a2@+	|(calling patom)
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+48,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	a3@(36),a2@+
+	movl	_bnp,a1
+	movl	a3@(40),a5
+	movl	a5@,a1@+
+	movl	a3@(40),a1@+
+	movl	a3@(40),a5
+	movl	a4@(20),a5@
+	movl	a1,_bnp
+	movl	a3@(44),a5	|(calling patom)
+	movl	a5@,a2@+
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+48,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	_bnp,a1
+	movl	a1@(-4),a5
+	movl	a1@(-8),a5@
+	movl	a1,_bnp
+	subql	#8,_bnp
+	subql	#4,a2	|(calling patom)
+	movl	a3@(48),a2@+
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+48,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	a3@(36),a2@+
+	movl	_bnp,a1
+	movl	a3@(40),a5
+	movl	a5@,a1@+
+	movl	a3@(40),a1@+
+	movl	a3@(40),a5
+	movl	a4@(20),a5@
+	movl	a1,_bnp
+	movl	a3@(52),a5	|(calling patom)
+	movl	a5@,a2@+
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+48,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	_bnp,a1
+	movl	a1@(-4),a5
+	movl	a1@(-8),a5@
+	movl	a1,_bnp
+	subql	#8,_bnp
+	subql	#4,a2	|(calling patom)
+	movl	a3@(56),a2@+
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+48,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	a3@(280),a2@+	|(calling patom)
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+48,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	a3@(36),a2@+
+	movl	_bnp,a1
+	movl	a3@(40),a5
+	movl	a5@,a1@+
+	movl	a3@(40),a1@+
+	movl	a3@(40),a5
+	movl	a4@(20),a5@
+	movl	a1,_bnp
+	movl	a4@,a1	|(calling patom)
+	movl	a1@(4),a2@+
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+48,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	_bnp,a1
+	movl	a1@(-4),a5
+	movl	a1@(-8),a5@
+	movl	a1,_bnp
+	subql	#8,_bnp
+	subql	#4,a2	|(calling terpri)
+	lea	a2@,a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+56,a5
+	jbsr	a5@
+	lea	a2@,a2
+	movl	a3@(64),a5
+	cmpl	#_nilatom+0x1400+4088,a5@
+	jle	L00212
+	movl	a3@(64),a5
+	movl	a5@,a0
+	jbsr	_qoneplus
+	movl	a3@(64),a5
+	movl	d0,a5@
+	jra	L00213
+L00212:
+	movl	a3@(64),a5
+	movl	a5@,d0
+	addql	#4,d0
+	movl	a3@(64),a5
+	movl	d0,a5@
+L00213:
+	movl	d7,sp@-
+	movl	a3@(68),sp@-
+	movl	#3,sp@-
+	jbsr	_Inonlocalgo
+	jra	L00208
+L00209:
+	movl	a4@,a0
+	movl	a0@(4),a5
+	cmpl	a5@,d7
+	jne	L00214
+	movl	a3@(8),a5
+	cmpl	a5@,d7
+	jne	L00217
+	movl	a3@(16),a5
+	cmpl	a5@,d7
+	jeq	L00216
+L00217:
+	movl	a3@(88),d0
+	jra	L00215
+L00216:
+	movl	d7,d0
+L00215:
+	movl	d0,a2@+
+	movl	a4@(4),a2@+
+	movl	d7,a2@+
+	jbsr	_qcons
+	movl	d0,a2@+
+	movl	a3@(12),a5
+	cmpl	a5@,d7
+	jeq	L00218
+	movl	a4@,a5
+	cmpl	a5@,d7
+	jne	L00219
+	movl	a3@(180),a2@+
+	jra	L00220
+L00219:
+	movl	d7,a2@+
+L00220:
+	jra	L00221
+L00218:
+	movl	d7,a2@+
+L00221:
+	movl	_bnp,a1
+	movl	a3@(12),a5
+	movl	a5@,a1@+
+	movl	a3@(12),a1@+
+	movl	a3@(12),a5
+	movl	a4@(28),a5@
+	movl	a3@(8),a5
+	movl	a5@,a1@+
+	movl	a3@(8),a1@+
+	movl	a3@(8),a5
+	movl	a4@(24),a5@
+	movl	a3@(16),a5
+	movl	a5@,a1@+
+	movl	a3@(16),a1@+
+	movl	a3@(16),a5
+	movl	a4@(20),a5@
+	movl	a1,_bnp
+	movl	a4@,a1	|(calling d-exp)
+	movl	a1@(4),a0
+	movl	a0@(4),a2@+
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+8,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	_bnp,a1
+	movl	a1@(-4),a5
+	movl	a1@(-8),a5@
+	movl	a1@(-12),a5
+	movl	a1@(-16),a5@
+	movl	a1@(-20),a5
+	movl	a1@(-24),a5@
+	movl	a1,_bnp
+	subl	#24,_bnp
+	subl	#12,a2
+	jra	L00208
+L00214:
+	movl	a3@(180),a5
+	movl	a5@,a2@+
+	movl	a4@,a1
+	movl	a1@(4),a0
+	movl	a0@(4),d0
+	movl	a2@-,d6
+	cmpl	d0,d6
+	jeq	L00223
+	movl	a3@(284),a2@+
+	movl	a4@,a1
+	movl	a1@(4),a0
+	movl	a0@(4),a2@+
+	movl	a2@(-8),d6
+	cmpl	a2@(-4),d6
+	jeq	L00224
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+200,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+	cmpl	d0,d7
+	jne	L00225
+	jra	L00222
+L00224:
+	subql	#8,a2
+L00225:
+L00223:
+	movl	a3@(8),a5
+	cmpl	a5@,d7
+	jne	L00228
+	movl	a3@(16),a5
+	cmpl	a5@,d7
+	jeq	L00227
+L00228:
+	movl	a3@(88),d0
+	jra	L00226
+L00227:
+	movl	d7,d0
+L00226:
+	movl	d0,a2@+
+	movl	d7,a2@+
+	movl	_bnp,a1
+	movl	a3@(8),a5
+	movl	a5@,a1@+
+	movl	a3@(8),a1@+
+	movl	a3@(8),a5
+	movl	a4@(24),a5@
+	movl	a3@(16),a5
+	movl	a5@,a1@+
+	movl	a3@(16),a1@+
+	movl	a3@(16),a5
+	movl	a4@(20),a5@
+	movl	a1,_bnp
+	movl	a4@,a1	|(calling d-exps)
+	movl	a1@(4),a5
+	movl	a5@,a2@+
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+208,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	_bnp,a1
+	movl	a1@(-4),a5
+	movl	a1@(-8),a5@
+	movl	a1@(-12),a5
+	movl	a1@(-16),a5@
+	movl	a1,_bnp
+	subl	#16,_bnp
+	subql	#8,a2
+	movl	a3@(180),a5
+	movl	a5@,a4@(16)
+	jra	L00208
+L00222:
+	movl	d7,a2@+
+	movl	d7,a2@+
+	lea	a2@,a5	|(calling d-genlab)
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+0,a5
+	jbsr	a5@
+	lea	a2@,a2
+	movl	d0,a4@(8)
+	movl	a4@(8),a2@+
+	jbsr	_qcons
+	movl	d0,a2@+
+	movl	d7,a2@+
+	movl	_bnp,a1
+	movl	a3@(12),a5
+	movl	a5@,a1@+
+	movl	a3@(12),a1@+
+	movl	a3@(12),a5
+	movl	a4@(28),a5@
+	movl	a3@(8),a5
+	movl	a5@,a1@+
+	movl	a3@(8),a1@+
+	movl	a3@(8),a5
+	movl	a4@(24),a5@
+	movl	a3@(16),a5
+	movl	a5@,a1@+
+	movl	a3@(16),a1@+
+	movl	a3@(16),a5
+	movl	a4@(20),a5@
+	movl	a1,_bnp
+	movl	a4@,a1	|(calling d-exp)
+	movl	a1@(4),a0
+	movl	a0@(4),a2@+
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+8,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	_bnp,a1
+	movl	a1@(-4),a5
+	movl	a1@(-8),a5@
+	movl	a1@(-12),a5
+	movl	a1@(-16),a5@
+	movl	a1@(-20),a5
+	movl	a1@(-24),a5@
+	movl	a1,_bnp
+	subl	#24,_bnp
+	subl	#12,a2	|(calling copy)
+	movl	a3@(288),a5
+	movl	a5@,a2@+
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+216,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	d0,a4@(12)
+	movl	a3@(8),a5
+	cmpl	a5@,d7
+	jne	L00231
+	movl	a3@(16),a5
+	cmpl	a5@,d7
+	jeq	L00230
+L00231:
+	movl	a3@(88),d0
+	jra	L00229
+L00230:
+	movl	d7,d0
+L00229:
+	movl	d0,a2@+
+	movl	d7,a2@+
+	movl	_bnp,a1
+	movl	a3@(8),a5
+	movl	a5@,a1@+
+	movl	a3@(8),a1@+
+	movl	a3@(8),a5
+	movl	a4@(24),a5@
+	movl	a3@(16),a5
+	movl	a5@,a1@+
+	movl	a3@(16),a1@+
+	movl	a3@(16),a5
+	movl	a4@(20),a5@
+	movl	a1,_bnp
+	movl	a4@,a1	|(calling d-exps)
+	movl	a1@(4),a5
+	movl	a5@,a2@+
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+208,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	_bnp,a1
+	movl	a1@(-4),a5
+	movl	a1@(-8),a5@
+	movl	a1@(-12),a5
+	movl	a1@(-16),a5@
+	movl	a1,_bnp
+	subl	#16,_bnp
+	subql	#8,a2
+	movl	a4@,a5
+	cmpl	a5@,d7
+	jne	L00234
+	cmpl	a4@(16),d7
+	jne	L00233
+L00234:
+	movl	a4@(4),a2@+	|(calling e-goto)
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+16,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	jra	L00232
+L00233:
+	movl	d7,d0
+L00232:
+	movl	a4@(8),a2@+	|(calling e-label)
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+24,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	a3@(288),a5
+	movl	a4@(12),a5@
+L00208:
+	movl	a4@,a5
+	movl	a5@,a4@
+	jra	L00202
+L00204:
+	subl	#20,a2	|(calling d-clearreg)
+	lea	a2@,a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+40,a5
+	jbsr	a5@
+	lea	a2@,a2
+	moveml	a6@(-24),#L00199
+	unlk	a6
+	rts
+L00199 = 15552
+L00198 = 24
+	.globl	F00235	|(fcn lambda c-cons)
+F00235:
+	link	a6,#-L00237
+	tstb	sp@(-132)
+	moveml	#L00238,sp@
+	movl	#_nilatom,d7
+	lea	linker,a3
+	movl	_lbot,a4
+	lea	a4@,a2
+L00236:
+	movl	a3@,a5	|(calling d-pushargs)
+	movl	a5@,a0
+	movl	a0@,a2@+
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+224,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	a3@(244),a2@+	|(calling e-write2)
+	movl	a3@(292),a2@+
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+160,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+	movl	a3@(216),a5
+	movl	a5@,a0
+	movl	a0@,a5
+	movl	a5@,d6
+	movl	a3@(216),a5
+	movl	d6,a5@
+	movl	a3@(296),a5
+	movl	a5@,a0
+	movl	a0@,d2
+	movl	d2,d0
+	subl	#2,d0
+	movl	d0,d2
+	movl	d2,d0
+	asll	#2,d0
+	addl	#_nilatom+0x1400+0,d0
+	movl	d2,d1
+	subl	#1024,d1
+	jcs	L00239
+	jbsr	_qnewint
+L00239:
+	movl	a3@(296),a5
+	movl	d0,a5@
+	lea	a2@,a5	|(calling d-clearreg)
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+40,a5
+	jbsr	a5@
+	lea	a2@,a2
+	moveml	a6@(-28),#L00238
+	unlk	a6
+	rts
+L00238 = 15556
+L00237 = 28
+	.globl	F00240	|(fcn lambda cc-cxr)
+F00240:
+	link	a6,#-L00242
+	tstb	sp@(-132)
+	moveml	#L00243,sp@
+	movl	#_nilatom,d7
+	lea	linker,a3
+	movl	_lbot,a4
+	lea	a4@,a2
+L00241:
+	movl	a3@(180),a5	|(calling d-supercxr)
+	movl	a5@,a2@+
+	movl	d7,a2@+
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+232,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+	moveml	a6@(-20),#L00243
+	unlk	a6
+	rts
+L00243 = 15488
+L00242 = 20
+	.globl	F00244	|(fcn lambda d-supercxr)
+F00244:
+	link	a6,#-L00246
+	tstb	sp@(-132)
+	moveml	#L00247,sp@
+	movl	#_nilatom,d7
+	lea	linker,a3
+	movl	_lbot,a4
+	lea	a4@(8),a2
+L00245:
+	movl	a3@,a5
+	movl	a5@,a0
+	movl	a0@,a1
+	movl	a1@(4),a2@+
+	movl	a3@,a5
+	movl	a5@,a0
+	movl	a0@,a5
+	movl	a5@,a0
+	movl	a0@(4),a2@+
+	movl	d7,a2@+
+	movl	d7,a2@+
+	movl	d7,a2@+
+	movl	a3@(140),a5
+	cmpl	a5@,d7
+	jeq	L00249
+	movl	a3@(300),a2@+
+	movl	a3@(304),a2@+
+	movl	a3@(308),a2@+
+	movl	a3@,a5
+	movl	a5@,a2@+
+	movl	d7,a2@+
+	jbsr	_qcons
+	movl	d0,a2@+
+	jbsr	_qcons
+	movl	d0,a2@+
+	jbsr	_qcons
+	movl	d0,a2@+
+	jbsr	_qcons
+	movl	d0,a2@+
+	movl	a3@(144),a5
+	movl	a5@,a2@+
+	jbsr	_qcons
+	movl	a3@(144),a5
+	movl	d0,a5@
+	jra	L00248
+L00249:
+	movl	d7,d0
+L00248:
+	movl	a4@(8),d0
+	subl	d7,d0
+	moveq	#9,d1
+	asrl	d1,d0
+	lea	_typetable+1,a5
+	addl	d0,a5
+	movb	a5@,d0
+	extw	d0
+	extl	d0
+	moveq	#1,d1
+	asll	d0,d1
+	movl	d1,d0
+	andw	#516,d0
+	jeq	L00251
+	movl	a3@(312),a2@+
+	movl	a4@(8),a2@+
+	movl	d7,a2@+
+	jbsr	_qcons
+	movl	d0,a2@+
+	jbsr	_qcons
+	movl	d0,a4@(16)
+	jra	L00250
+L00251:
+	movl	a4@(8),a2@+	|(calling d-fixnumexp)
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+240,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	a3@(316),a2@+	|(calling d-regused)
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+248,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	a3@(316),a4@(16)
+L00250:
+	movl	a4@(12),a2@+	|(calling d-simple)
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+256,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	d0,a4@(20)
+	cmpl	d0,d7
+	jne	L00255
+	movl	a4@(16),d6
+	cmpl	a3@(316),d6
+	jne	L00257
+	movl	a4@(12),a2@+	|(calling d-semisimple)
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+264,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	d0,a4@(24)
+	cmpl	d0,d7
+	jne	L00257
+	movl	a4@(16),a2@+	|(calling e-move)
+	|(calling e-cvt)
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+80,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	d0,a2@+
+	movl	a3@(220),a2@+
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+88,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+	jra	L00256
+L00257:
+	movl	d7,d0
+L00256:
+	movl	a3@(320),a2@+
+	movl	d7,a2@+
+	movl	_bnp,a1
+	movl	a3@(8),a5
+	movl	a5@,a1@+
+	movl	a3@(8),a1@+
+	movl	a3@(8),a5
+	movl	a4@(32),a5@
+	movl	a3@(16),a5
+	movl	a5@,a1@+
+	movl	a3@(16),a1@+
+	movl	a3@(16),a5
+	movl	a4@(28),a5@
+	movl	a1,_bnp
+	movl	a4@(12),a2@+	|(calling d-exp)
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+8,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	_bnp,a1
+	movl	a1@(-4),a5
+	movl	a1@(-8),a5@
+	movl	a1@(-12),a5
+	movl	a1@(-16),a5@
+	movl	a1,_bnp
+	subl	#16,_bnp
+	subql	#8,a2
+	movl	a3@(324),a4@(20)
+	movl	a4@(16),d6
+	cmpl	a3@(316),d6
+	jne	L00260
+	cmpl	a4@(24),d7
+	jne	L00260
+	movl	a3@(328),a2@+	|(calling e-move)
+	movl	a4@(16),a2@+	|(calling e-cvt)
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+80,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	d0,a2@+
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+88,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+	jra	L00259
+L00260:
+	movl	d7,d0
+L00259:
+	jra	L00254
+L00255:
+	movl	d7,d0
+L00254:
+	movl	a4@,d6
+	cmpl	a3@(332),d6
+	jne	L00263
+	movl	a4@(16),a2@+	|(calling d-structgen)
+	movl	a4@(20),a2@+
+	movl	#_nilatom+0x1400+32,a2@+
+	lea	a2@(-12),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+272,a5
+	jbsr	a5@
+	lea	a2@(-12),a2
+	movl	d0,a4@(16)
+	movl	a3@(180),a5	|(calling *break)
+	movl	a5@,a2@+
+	movl	a3@(336),a2@+
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+280,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+	movl	a3@(340),a2@+	|(calling e-write3)
+	movl	a4@(16),a2@+
+	movl	a3@(344),a2@+
+	lea	a2@(-12),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+176,a5
+	jbsr	a5@
+	lea	a2@(-12),a2
+	movl	a3@(244),a2@+	|(calling e-write2)
+	movl	a3@(348),a2@+
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+160,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+	lea	a2@,a5	|(calling d-clearreg)
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+40,a5
+	jbsr	a5@
+	lea	a2@,a2
+	movl	a3@(16),a5
+	cmpl	a5@,d7
+	jeq	L00265
+	movl	a3@(16),a5
+	movl	a5@,d6
+	cmpl	a3@(320),d6
+	jeq	L00265
+	movl	a3@(320),a2@+	|(calling d-move)
+	movl	a3@(16),a5
+	movl	a5@,a2@+
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+32,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+	jra	L00264
+L00265:
+	movl	d7,d0
+L00264:
+	movl	a3@(8),a5
+	movl	a5@,a0
+	cmpl	a0@(4),d7
+	jeq	L00268
+	movl	a3@(8),a5	|(calling e-goto)
+	movl	a5@,a0
+	movl	a0@(4),a2@+
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+16,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	jra	L00267
+L00268:
+	movl	d7,d0
+L00267:
+	jra	L00262
+L00263:
+	movl	a4@(20),d0
+	subl	d7,d0
+	moveq	#9,d1
+	asrl	d1,d0
+	lea	_typetable+1,a5
+	cmpb	#3,a5@(0,d0:L)
+	jne	L00270
+	movl	a3@(352),a2@+
+	movl	a4@(20),a1
+	movl	a1@(4),d0
+	movl	a2@-,d6
+	cmpl	d0,d6
+	jne	L00270
+	movl	a4@(20),a2@+	|(calling e-move)
+	|(calling e-cvt)
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+80,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	d0,a2@+
+	movl	a3@(356),a2@+
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+88,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+	movl	a3@(356),a4@(20)
+	jra	L00269
+L00270:
+	movl	d7,d0
+L00269:
+	movl	a4@(16),a2@+	|(calling d-structgen)
+	movl	a4@(20),a2@+
+	movl	#_nilatom+0x1400+16,a2@+
+	lea	a2@(-12),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+272,a5
+	jbsr	a5@
+	lea	a2@(-12),a2
+	movl	d0,a4@(16)
+	movl	a3@(16),a5
+	cmpl	a5@,d7
+	jeq	L00273
+	movl	a4@,d6
+	cmpl	a3@(360),d6
+	jne	L00275
+	movl	a3@(316),d0
+	jra	L00274
+L00275:
+	movl	a3@(16),a5	|(calling e-cvt)
+	movl	a5@,a2@+
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+80,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+L00274:
+	jra	L00272
+L00273:
+	movl	d7,d0
+L00272:
+	movl	d0,a4@(20)
+	cmpl	a4@(20),d7
+	jeq	L00277
+	cmpl	a4@(4),d7
+	jeq	L00279
+	movl	a3@(364),a2@+	|(calling e-write3)
+	movl	a4@(16),a2@+
+	movl	a3@(260),a2@+
+	lea	a2@(-12),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+176,a5
+	jbsr	a5@
+	lea	a2@(-12),a2
+	movl	a3@(260),a2@+	|(calling e-move)
+	movl	a4@(20),a2@+
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+88,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+	jra	L00278
+L00279:
+	movl	a4@(16),a2@+	|(calling e-move)
+	movl	a4@(20),a2@+
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+88,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+L00278:
+	movl	a4@,d6
+	cmpl	a3@(360),d6
+	jne	L00281
+	movl	a3@(244),a2@+	|(calling e-write2)
+	movl	a3@(368),a2@+
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+160,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+	lea	a2@,a5	|(calling d-clearreg)
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+40,a5
+	jbsr	a5@
+	lea	a2@,a2
+	movl	a3@(16),a5
+	movl	a5@,d6
+	cmpl	a3@(320),d6
+	jeq	L00283
+	movl	a3@(320),a2@+	|(calling d-move)
+	movl	a3@(16),a5
+	movl	a5@,a2@+
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+32,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+	jra	L00282
+L00283:
+	movl	d7,d0
+L00282:
+	movl	a3@(8),a5
+	movl	a5@,a0
+	cmpl	a0@(4),d7
+	jeq	L00285
+	movl	a3@(8),a5	|(calling e-goto)
+	movl	a5@,a0
+	movl	a0@(4),a2@+
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+16,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	jra	L00284
+L00285:
+	movl	d7,d0
+L00284:
+	jra	L00280
+L00281:
+	movl	a3@(20),a2@+	|(calling e-cmp)
+	|(calling e-cvt)
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+80,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	d0,a2@+
+	movl	a4@(16),a2@+
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+96,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+	lea	a2@,a5	|(calling d-handlecc)
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+104,a5
+	jbsr	a5@
+	lea	a2@,a2
+L00280:
+	jra	L00276
+L00277:
+	movl	a3@(8),a5
+	cmpl	a5@,d7
+	jeq	L00286
+	movl	a4@,d6
+	cmpl	a3@(360),d6
+	jne	L00288
+	movl	a3@(8),a5
+	movl	a5@,a0
+	cmpl	a0@(4),d7
+	jeq	L00290
+	movl	a3@(8),a5	|(calling e-goto)
+	movl	a5@,a0
+	movl	a0@(4),a2@+
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+16,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	jra	L00289
+L00290:
+	movl	d7,d0
+L00289:
+	jra	L00287
+L00288:
+	movl	a3@(8),a5
+	cmpl	a5@,d7
+	jeq	L00292
+	movl	a3@(20),a2@+	|(calling e-cmp)
+	|(calling e-cvt)
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+80,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	d0,a2@+
+	movl	a4@(16),a2@+
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+96,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+	lea	a2@,a5	|(calling d-handlecc)
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+104,a5
+	jbsr	a5@
+	lea	a2@,a2
+	jra	L00291
+L00292:
+	movl	d7,d0
+L00291:
+L00287:
+	jra	L00276
+L00286:
+	movl	d7,d0
+L00276:
+L00262:
+	movl	a3@(140),a5
+	cmpl	a5@,d7
+	jeq	L00294
+	movl	a3@(372),a2@+
+	movl	a3@(144),a5
+	movl	a5@,a2@+
+	jbsr	_qcons
+	movl	a3@(144),a5
+	movl	d0,a5@
+	movl	a3@(144),a5
+	movl	a5@,d0
+	jra	L00293
+L00294:
+	movl	d7,d0
+L00293:
+	subl	#28,a2
+	moveml	a6@(-24),#L00247
+	unlk	a6
+	rts
+L00247 = 15552
+L00246 = 24
+	.globl	F00295	|(fcn lambda d-semisimple)
+F00295:
+	link	a6,#-L00297
+	tstb	sp@(-132)
+	moveml	#L00298,sp@
+	movl	#_nilatom,d7
+	lea	linker,a3
+	movl	_lbot,a4
+	lea	a4@(4),a2
+L00296:
+	movl	a4@,a2@+	|(calling d-simple)
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+256,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	cmpl	d0,d7
+	jne	L00299
+	movl	a4@,d0
+	subl	d7,d0
+	moveq	#9,d1
+	asrl	d1,d0
+	lea	_typetable+1,a5
+	cmpb	#3,a5@(0,d0:L)
+	jne	L00300
+	movl	a3@(376),a2@+
+	movl	a4@,a1
+	movl	a1@(4),d0
+	movl	a2@-,d6
+	cmpl	d0,d6
+	jne	L00300
+	movl	a4@,a5
+	movl	a5@,a0
+	movl	a0@(4),d0
+	subl	d7,d0
+	moveq	#9,d1
+	asrl	d1,d0
+	lea	_typetable+1,a5
+	cmpb	#3,a5@(0,d0:L)
+	jne	L00300
+	movl	a3@(380),a2@+
+	movl	a4@,a5
+	movl	a5@,a1
+	movl	a1@(4),a0
+	movl	a0@(4),d0
+	movl	a2@-,d6
+	cmpl	d0,d6
+	jne	L00300
+	movl	a4@,a5
+	movl	a5@,a1
+	movl	a1@(4),a5
+	movl	a5@,a0
+	movl	a0@(4),d0
+	subl	d7,d0
+	moveq	#9,d1
+	asrl	d1,d0
+	lea	_typetable+1,a5
+	cmpb	#3,a5@(0,d0:L)
+	jne	L00300
+	movl	a3@(384),a2@+
+	movl	a4@,a5
+	movl	a5@,a1
+	movl	a1@(4),a5
+	movl	a5@,a0
+	movl	a0@(4),a1
+	movl	a1@(4),d0
+	movl	a2@-,d6
+	cmpl	d0,d6
+	jeq	L00301
+	movl	d7,d0
+	jra	L00302
+L00301:
+	movl	a3@(180),d0
+L00302:
+	jra	L00303
+L00300:
+	movl	d7,d0
+L00303:
+	jra	L00304
+L00299:
+	movl	d0,d0
+L00304:
+	subql	#4,a2
+	moveml	a6@(-24),#L00298
+	unlk	a6
+	rts
+L00298 = 15552
+L00297 = 24
+	.globl	F00305	|(fcn lambda d-structgen)
+F00305:
+	link	a6,#-L00307
+	tstb	sp@(-132)
+	moveml	#L00308,sp@
+	movl	#_nilatom,d7
+	lea	linker,a3
+	movl	_lbot,a4
+	lea	a4@(12),a2
+L00306:
+	movl	a4@(4),d0
+	subl	d7,d0
+	moveq	#9,d1
+	asrl	d1,d0
+	lea	_typetable+1,a5
+	cmpb	#3,a5@(0,d0:L)
+	jne	L00310
+	movl	a4@(4),a1
+	movl	a1@(4),d0
+	cmpl	a3@(352),d0
+	jne	L00310
+	movl	a3@(180),a5	|(calling *break)
+	movl	a5@,a2@+
+	movl	a3@(388),a2@+
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+280,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+	jra	L00309
+L00310:
+	movl	a4@(4),d0
+	subl	d7,d0
+	moveq	#9,d1
+	asrl	d1,d0
+	lea	_typetable+1,a5
+	addl	d0,a5
+	movb	a5@,d0
+	extw	d0
+	extl	d0
+	moveq	#1,d1
+	asll	d0,d1
+	movl	d1,d0
+	andw	#1783,d0
+	jne	L00313
+	movl	a4@(4),a2@+	|(calling d-move)
+	movl	a3@(324),a2@+
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+32,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+	movl	a3@(324),a2@+	|(calling d-clearreg)
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+40,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	a3@(324),a4@(4)
+	jra	L00312
+L00313:
+	movl	d7,d0
+L00312:
+	movl	a4@,d0
+	subl	d7,d0
+	moveq	#9,d1
+	asrl	d1,d0
+	lea	_typetable+1,a5
+	cmpb	#3,a5@(0,d0:L)
+	jne	L00317
+	movl	a4@(8),a2@+	|(calling *)
+	movl	a4@,a5
+	movl	a5@,a1
+	movl	a1@(4),a2@+
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+184,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+	movl	d0,a2@+
+	movl	a4@(4),a2@+
+	movl	d7,a2@+
+	jbsr	_qcons
+	movl	d0,a2@+
+	jbsr	_qcons
+	jra	L00316
+L00317:
+	movl	a3@(392),a2@+	|(calling d-regused)
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+248,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	a4@,a2@+	|(calling e-move)
+	movl	a3@(392),a2@+
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+88,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+	movl	a3@(396),a2@+	|(calling e-write3)
+	movl	a3@(400),a2@+
+	movl	a3@(392),a2@+
+	lea	a2@(-12),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+176,a5
+	jbsr	a5@
+	lea	a2@(-12),a2
+	movl	a3@(404),a2@+
+	movl	a3@(408),a2@+
+	movl	a4@(4),a2@+
+	movl	a3@(412),a2@+
+	jbsr	_qcons
+	movl	d0,a2@+
+	jbsr	_qcons
+	movl	d0,a2@+
+	jbsr	_qcons
+L00316:
+L00309:
+	subl	#12,a2
+	moveml	a6@(-20),#L00308
+	unlk	a6
+	rts
+L00308 = 15488
+L00307 = 20
+	.globl	F00318	|(fcn lambda c-rplacx)
+F00318:
+	link	a6,#-L00320
+	tstb	sp@(-132)
+	moveml	#L00321,sp@
+	movl	#_nilatom,d7
+	lea	linker,a3
+	movl	_lbot,a4
+	lea	a4@,a2
+L00319:
+	movl	a3@(416),a2@+	|(calling d-superrplacx)
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+288,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	moveml	a6@(-20),#L00321
+	unlk	a6
+	rts
+L00321 = 15488
+L00320 = 20
+	.globl	F00322	|(fcn lambda d-superrplacx)
+F00322:
+	link	a6,#-L00324
+	tstb	sp@(-132)
+	moveml	#L00325,sp@
+	movl	#_nilatom,d7
+	lea	linker,a3
+	movl	_lbot,a4
+	lea	a4@(4),a2
+L00323:
+	movl	a3@,a5
+	movl	a5@,a0
+	movl	a0@,a1
+	movl	a1@(4),a2@+
+	movl	a3@,a5
+	movl	a5@,a0
+	movl	a0@,a5
+	movl	a5@,a0
+	movl	a0@(4),a2@+
+	movl	a3@,a5
+	movl	a5@,a0
+	movl	a0@,a5
+	movl	a5@,a1
+	movl	a1@,a0
+	movl	a0@(4),a2@+
+	movl	d7,a2@+
+	movl	d7,a2@+
+	movl	d7,a2@+
+	movl	a3@(140),a5
+	cmpl	a5@,d7
+	jeq	L00327
+	movl	a3@(420),a2@+
+	movl	a3@(424),a2@+
+	movl	a4@,a2@+
+	movl	a3@(428),a2@+
+	movl	a3@,a2@+
+	movl	a3@(432),a2@+
+	movl	a3@,a5
+	movl	a5@,a2@+
+	movl	d7,a2@+
+	jbsr	_qcons
+	movl	d0,a2@+
+	jbsr	_qcons
+	movl	d0,a2@+
+	jbsr	_qcons
+	movl	d0,a2@+
+	jbsr	_qcons
+	movl	d0,a2@+
+	jbsr	_qcons
+	movl	d0,a2@+
+	jbsr	_qcons
+	movl	d0,a2@+
+	jbsr	_qcons
+	movl	d0,a2@+
+	movl	a3@(144),a5
+	movl	a5@,a2@+
+	jbsr	_qcons
+	movl	a3@(144),a5
+	movl	d0,a5@
+	jra	L00326
+L00327:
+	movl	d7,d0
+L00326:
+	movl	a4@(4),d0
+	subl	d7,d0
+	moveq	#9,d1
+	asrl	d1,d0
+	lea	_typetable+1,a5
+	addl	d0,a5
+	movb	a5@,d0
+	extw	d0
+	extl	d0
+	moveq	#1,d1
+	asll	d0,d1
+	movl	d1,d0
+	andw	#516,d0
+	jeq	L00329
+	movl	a3@(312),a2@+
+	movl	a4@(4),a2@+
+	movl	d7,a2@+
+	jbsr	_qcons
+	movl	d0,a2@+
+	jbsr	_qcons
+	movl	d0,a4@(16)
+	jra	L00328
+L00329:
+	movl	a4@(4),a2@+	|(calling d-fixnumexp)
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+240,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	a3@(316),a2@+	|(calling d-regused)
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+248,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	a3@(316),a4@(16)
+L00328:
+	movl	a4@,d6
+	cmpl	a3@(416),d6
+	jeq	L00334
+	movl	a4@(8),a2@+	|(calling d-simple)
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+256,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	d0,a4@(20)
+	cmpl	d0,d7
+	jne	L00333
+L00334:
+	movl	a4@(16),d6
+	cmpl	a3@(316),d6
+	jne	L00336
+	movl	a4@(8),a2@+	|(calling d-semisimple)
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+264,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	d0,a4@(24)
+	cmpl	d0,d7
+	jne	L00336
+	movl	a4@(16),a2@+	|(calling d-move)
+	movl	a3@(220),a2@+
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+32,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+	jra	L00335
+L00336:
+	movl	d7,d0
+L00335:
+	movl	a3@(324),a2@+
+	movl	d7,a2@+
+	movl	_bnp,a1
+	movl	a3@(8),a5
+	movl	a5@,a1@+
+	movl	a3@(8),a1@+
+	movl	a3@(8),a5
+	movl	a4@(32),a5@
+	movl	a3@(16),a5
+	movl	a5@,a1@+
+	movl	a3@(16),a1@+
+	movl	a3@(16),a5
+	movl	a4@(28),a5@
+	movl	a1,_bnp
+	movl	a4@(8),a2@+	|(calling d-exp)
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+8,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	_bnp,a1
+	movl	a1@(-4),a5
+	movl	a1@(-8),a5@
+	movl	a1@(-12),a5
+	movl	a1@(-16),a5@
+	movl	a1,_bnp
+	subl	#16,_bnp
+	subql	#8,a2
+	movl	a3@(324),a4@(20)
+	movl	a4@(16),d6
+	cmpl	a3@(316),d6
+	jne	L00339
+	cmpl	a4@(24),d7
+	jne	L00339
+	movl	a3@(328),a2@+	|(calling d-move)
+	movl	a4@(16),a2@+
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+32,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+	jra	L00338
+L00339:
+	movl	d7,d0
+L00338:
+	jra	L00332
+L00333:
+	movl	d7,d0
+L00332:
+	movl	a4@(16),a2@+	|(calling d-structgen)
+	movl	a4@(20),a2@+
+	movl	a4@,d6
+	cmpl	a3@(332),d6
+	jne	L00342
+	movl	#_nilatom+0x1400+32,d0
+	jra	L00341
+L00342:
+	movl	#_nilatom+0x1400+16,d0
+L00341:
+	movl	d0,a2@+
+	lea	a2@(-12),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+272,a5
+	jbsr	a5@
+	lea	a2@(-12),a2
+	movl	d0,a4@(20)
+	movl	a4@,d6
+	cmpl	a3@(332),d6
+	jne	L00344
+	movl	a3@(180),a5	|(calling *break)
+	movl	a5@,a2@+
+	movl	a3@(436),a2@+
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+280,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+	movl	a3@(440),a2@+	|(calling d-simple)
+	movl	a4@(12),a2@+
+	movl	d7,a2@+
+	jbsr	_qcons
+	movl	d0,a2@+
+	jbsr	_qcons
+	movl	d0,a2@+
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+256,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	d0,a4@(16)
+	cmpl	d0,d7
+	jeq	L00346
+	movl	a3@(340),a2@+	|(calling e-write3)
+	movl	a4@(16),a2@+	|(calling e-cvt)
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+80,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	d0,a2@+
+	movl	a4@(20),a2@+
+	lea	a2@(-12),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+176,a5
+	jbsr	a5@
+	lea	a2@(-12),a2
+	jra	L00345
+L00346:
+	movl	a3@(444),a2@+	|(calling e-write3)
+	movl	a4@(20),a2@+
+	movl	a3@(220),a2@+
+	lea	a2@(-12),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+176,a5
+	jbsr	a5@
+	lea	a2@(-12),a2
+	movl	a3@(96),a2@+
+	movl	d7,a2@+
+	movl	_bnp,a1
+	movl	a3@(8),a5
+	movl	a5@,a1@+
+	movl	a3@(8),a1@+
+	movl	a3@(8),a5
+	movl	a4@(32),a5@
+	movl	a3@(16),a5
+	movl	a5@,a1@+
+	movl	a3@(16),a1@+
+	movl	a3@(16),a5
+	movl	a4@(28),a5@
+	movl	a1,_bnp
+	movl	a4@(12),a2@+	|(calling d-exp)
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+8,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	_bnp,a1
+	movl	a1@(-4),a5
+	movl	a1@(-8),a5@
+	movl	a1@(-12),a5
+	movl	a1@(-16),a5@
+	movl	a1,_bnp
+	subl	#16,_bnp
+	subql	#8,a2	|(calling d-clearreg)
+	movl	a3@(96),a2@+
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+40,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	a3@(340),a2@+	|(calling e-write3)
+	movl	a3@(448),a2@+
+	movl	a3@(452),a2@+
+	lea	a2@(-12),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+176,a5
+	jbsr	a5@
+	lea	a2@(-12),a2
+L00345:
+	jra	L00343
+L00344:
+	movl	a4@,d6
+	cmpl	a3@(360),d6
+	jne	L00347
+	movl	a3@(440),a2@+
+	movl	a4@(12),a2@+
+	movl	d7,a2@+
+	jbsr	_qcons
+	movl	d0,a2@+
+	jbsr	_qcons
+	movl	d0,a4@(12)
+	cmpl	d0,d7
+	jeq	L00347
+	cmpl	d7,d7
+	jne	L00343
+L00347:
+	movl	a4@(12),a2@+	|(calling d-simple)
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+256,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	d0,a4@(16)
+	cmpl	d0,d7
+	jeq	L00349
+	movl	a4@(16),a2@+	|(calling e-move)
+	|(calling e-cvt)
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+80,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	d0,a2@+
+	movl	a4@(20),a2@+
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+88,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+	jra	L00348
+L00349:
+	movl	a4@,d6
+	cmpl	a3@(416),d6
+	jne	L00351
+	movl	a3@(324),a2@+	|(calling e-move)
+	movl	a3@(456),a2@+
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+88,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+	movl	d7,a2@+
+	movl	a3@(216),a5
+	movl	a5@,a2@+
+	jbsr	_qcons
+	movl	a3@(216),a5
+	movl	d0,a5@
+	movl	a3@(296),a5
+	cmpl	#_nilatom+0x1400+4088,a5@
+	jle	L00352
+	movl	a3@(296),a5
+	movl	a5@,a0
+	jbsr	_qoneplus
+	movl	a3@(296),a5
+	movl	d0,a5@
+	jra	L00353
+L00352:
+	movl	a3@(296),a5
+	movl	a5@,d0
+	addql	#4,d0
+	movl	a3@(296),a5
+	movl	d0,a5@
+L00353:
+	jra	L00350
+L00351:
+	movl	d7,d0
+L00350:
+	movl	a3@(364),a2@+	|(calling e-write3)
+	movl	a4@(20),a2@+
+	movl	a3@(260),a2@+
+	lea	a2@(-12),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+176,a5
+	jbsr	a5@
+	lea	a2@(-12),a2
+	movl	a3@(260),a2@+	|(calling e-move)
+	movl	a3@(220),a2@+
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+88,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+	movl	a3@(460),a2@+
+	movl	d7,a2@+
+	movl	_bnp,a1
+	movl	a3@(8),a5
+	movl	a5@,a1@+
+	movl	a3@(8),a1@+
+	movl	a3@(8),a5
+	movl	a4@(32),a5@
+	movl	a3@(16),a5
+	movl	a5@,a1@+
+	movl	a3@(16),a1@+
+	movl	a3@(16),a5
+	movl	a4@(28),a5@
+	movl	a1,_bnp
+	movl	a4@(12),a2@+	|(calling d-exp)
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+8,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	_bnp,a1
+	movl	a1@(-4),a5
+	movl	a1@(-8),a5@
+	movl	a1@(-12),a5
+	movl	a1@(-16),a5@
+	movl	a1,_bnp
+	subl	#16,_bnp
+	subql	#8,a2
+	movl	a4@,d6
+	cmpl	a3@(416),d6
+	jne	L00355
+	movl	a3@(464),a2@+	|(calling e-move)
+	movl	a3@(96),a2@+
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+88,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+	movl	a3@(216),a5
+	movl	a5@,a0
+	movl	a3@(216),a5
+	movl	a0@,a5@
+	movl	a3@(296),a5
+	cmpl	#_nilatom+0x1400-4096,a5@
+	jle	L00356
+	movl	a3@(296),a5
+	cmpl	#_nilatom+0x1400+4092,a5@
+	jle	L00357
+L00356:
+	movl	a3@(296),a5
+	movl	a5@,a0
+	jbsr	_qoneminus
+	movl	a3@(296),a5
+	movl	d0,a5@
+	jra	L00358
+L00357:
+	movl	a3@(296),a5
+	movl	a5@,d0
+	subql	#4,d0
+	movl	a3@(296),a5
+	movl	d0,a5@
+L00358:
+	jra	L00354
+L00355:
+	movl	d7,d0
+L00354:
+L00348:
+L00343:
+	movl	a3@(140),a5
+	cmpl	a5@,d7
+	jeq	L00360
+	movl	a3@(468),a2@+
+	movl	a3@(144),a5
+	movl	a5@,a2@+
+	jbsr	_qcons
+	movl	a3@(144),a5
+	movl	d0,a5@
+	movl	a3@(144),a5
+	movl	a5@,d0
+	jra	L00359
+L00360:
+	movl	d7,d0
+L00359:
+	subl	#28,a2
+	moveml	a6@(-24),#L00325
+	unlk	a6
+	rts
+L00325 = 15552
+L00324 = 24
+	.globl	F00361	|(fcn lambda cc-cxxr)
+F00361:
+	link	a6,#-L00363
+	tstb	sp@(-132)
+	moveml	#L00364,sp@
+	movl	#_nilatom,d7
+	lea	linker,a3
+	movl	_lbot,a4
+	lea	a4@(8),a2
+L00362:
+	movl	d7,a2@+
+	movl	d7,a2@+
+	movl	d7,a2@+
+	movl	d7,a2@+
+	movl	d7,a2@+
+	movl	d7,a2@+
+	movl	a3@(140),a5
+	cmpl	a5@,d7
+	jeq	L00367
+	movl	a3@(472),a2@+
+	movl	a3@(144),a5
+	movl	a5@,a2@+
+	jbsr	_qcons
+	movl	a3@(144),a5
+	movl	d0,a5@
+	jra	L00366
+L00367:
+	movl	d7,d0
+L00366:
+	cmpl	a4@,d7
+	jne	L00369
+	movl	a3@(16),a5
+	cmpl	a5@,d7
+	jeq	L00371
+	movl	a3@(20),a2@+	|(calling d-move)
+	movl	a3@(16),a5
+	movl	a5@,a2@+
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+32,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+	jra	L00370
+L00371:
+	movl	d7,d0
+L00370:
+	movl	a3@(8),a5
+	movl	a5@,a0
+	cmpl	a0@,d7
+	jeq	L00373
+	movl	a3@(8),a5	|(calling e-goto)
+	movl	a5@,a0
+	movl	a0@,a2@+
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+16,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	jra	L00372
+L00373:
+	movl	d7,d0
+L00372:
+	movl	d7,d0
+	jra	L00365
+|	jra	L00368
+L00369:
+	movl	d7,d0
+L00368:
+	movl	a4@,d0
+	subl	d7,d0
+	moveq	#9,d1
+	asrl	d1,d0
+	lea	_typetable+1,a5
+	cmpb	#1,a5@(0,d0:L)
+	jne	L00375
+	movl	a4@,a2@+	|(calling d-bestreg)
+	movl	a4@(4),a2@+
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+296,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+	movl	d0,a4@(16)
+	cmpl	d0,d7
+	jeq	L00375
+	movl	a4@(16),a1
+	movl	a1@(4),a4@(8)
+	movl	a4@(8),a4@(12)
+	movl	a4@(16),a5
+	movl	a5@,a0
+	movl	a0@(4),a4@(20)
+	movl	a4@(16),a5
+	movl	a5@,a1
+	movl	a1@,a0
+	movl	a0@(4),a4@(24)
+	jra	L00374
+L00375:
+	movl	a4@,a2@+	|(calling d-simple)
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+256,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	cmpl	d0,d7
+	jne	L00377
+	movl	a3@(324),a2@+	|(calling d-clearreg)
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+40,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	a3@(320),a2@+
+	movl	d7,a2@+
+	movl	d7,a2@+
+	movl	_bnp,a1
+	movl	a3@(12),a5
+	movl	a5@,a1@+
+	movl	a3@(12),a1@+
+	movl	a3@(12),a5
+	movl	a4@(40),a5@
+	movl	a3@(8),a5
+	movl	a5@,a1@+
+	movl	a3@(8),a1@+
+	movl	a3@(8),a5
+	movl	a4@(36),a5@
+	movl	a3@(16),a5
+	movl	a5@,a1@+
+	movl	a3@(16),a1@+
+	movl	a3@(16),a5
+	movl	a4@(32),a5@
+	movl	a1,_bnp
+	movl	a4@,a2@+	|(calling d-exp)
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+8,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	_bnp,a1
+	movl	a1@(-4),a5
+	movl	a1@(-8),a5@
+	movl	a1@(-12),a5
+	movl	a1@(-16),a5@
+	movl	a1@(-20),a5
+	movl	a1@(-24),a5@
+	movl	a1,_bnp
+	subl	#24,_bnp
+	subl	#12,a2
+	movl	a3@(324),d0
+L00377:
+	movl	d0,a4@(8)
+	movl	d7,a4@(20)
+	movl	a4@(4),a4@(24)
+L00374:
+	cmpl	a4@,d7
+	jeq	L00379
+	movl	a4@,d0
+	subl	d7,d0
+	moveq	#9,d1
+	asrl	d1,d0
+	lea	_typetable+1,a5
+	cmpb	#1,a5@(0,d0:L)
+	jne	L00379
+	movl	a3@(180),a5
+	movl	a5@,a4@(28)
+	jra	L00378
+L00379:
+	movl	d7,d0
+L00378:
+	movl	a4@(8),d0
+	subl	d7,d0
+	moveq	#9,d1
+	asrl	d1,d0
+	lea	_typetable+1,a5
+	cmpb	#3,a5@(0,d0:L)
+	jne	L00382
+	movl	a4@(8),a1
+	movl	a1@(4),d0
+	cmpl	a3@(476),d0
+	jeq	L00384
+	movl	a4@(8),a0
+	movl	a0@(4),d0
+	cmpl	a3@(480),d0
+	jne	L00382
+L00384:
+	movl	a4@(8),a2@+	|(calling d-move)
+	movl	a3@(320),a2@+
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+32,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+	movl	a3@(324),a4@(8)
+	jra	L00381
+L00382:
+	movl	d7,d0
+L00381:
+	movl	a4@(24),a2@+	|(beginning do)
+	movl	d7,a2@+
+L00385:
+	cmpl	a4@(32),d7
+	jne	L00386
+	movl	a3@(16),a5
+	cmpl	a5@,d7
+	jeq	L00389
+	movl	a4@(12),a2@+	|(calling d-movespec)
+	movl	a3@(16),a5
+	movl	a5@,a2@+
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+304,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+	jra	L00388
+L00389:
+	movl	d7,d0
+L00388:
+	movl	a3@(8),a5
+	cmpl	a5@,d7
+	jeq	L00391
+	movl	a3@(484),a2@+
+	movl	a4@(12),a1
+	movl	a1@(4),d0
+	movl	a2@-,d6
+	cmpl	d0,d6
+	jne	L00393
+	movl	a4@(12),a5
+	movl	a5@,a0
+	movl	a0@,a1
+	movl	a1@(4),a2@+
+	movl	a3@(16),a5	|(calling e-cvt)
+	movl	a5@,a2@+
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+80,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	d0,a0
+	movl	a0@,a1
+	movl	a1@(4),a2@+
+	movl	a2@(-8),d6
+	cmpl	a2@(-4),d6
+	jeq	L00395
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+200,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+	cmpl	d0,d7
+	jne	L00396
+	jra	L00393
+L00395:
+	subql	#8,a2
+L00396:
+	movl	a3@(20),a2@+	|(calling e-cmp)
+	|(calling e-cvt)
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+80,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	d0,a2@+
+	movl	a3@(488),a2@+
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+96,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+	jra	L00392
+L00393:
+	movl	a3@(20),a2@+	|(calling e-cmp)
+	|(calling e-cvt)
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+80,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	d0,a2@+
+	movl	a4@(12),a2@+
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+96,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+L00392:
+	jra	L00390
+L00391:
+	movl	d7,d0
+L00390:
+	lea	a2@,a5	|(calling d-handlecc)
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+104,a5
+	jbsr	a5@
+	lea	a2@,a2
+	jra	L00387
+L00386:
+	movl	a4@(8),d0
+	subl	d7,d0
+	moveq	#9,d1
+	asrl	d1,d0
+	lea	_typetable+1,a5
+	cmpb	#1,a5@(0,d0:L)
+	jne	L00398
+	movl	a3@(492),a2@+
+	movl	a4@(32),a1
+	movl	a1@(4),d0
+	movl	a2@-,d6
+	cmpl	d0,d6
+	jne	L00400
+	movl	a4@(32),a5
+	cmpl	a5@,d7
+	jeq	L00403
+	movl	a3@(496),a2@+
+	movl	a4@(32),a5
+	movl	a5@,a0
+	movl	a0@(4),d0
+	movl	a2@-,d6
+	cmpl	d0,d6
+	jne	L00402
+L00403:
+	movl	a4@(32),a5
+	movl	a5@,a4@(36)
+	movl	a3@(408),a2@+
+	movl	a4@(8),a2@+
+	movl	d7,a2@+
+	jbsr	_qcons
+	movl	d0,a2@+
+	jbsr	_qcons
+	movl	d0,a4@(12)
+	movl	a4@(20),a2@+	|(calling append)
+	movl	a3@(492),a2@+
+	movl	d7,a2@+
+	jbsr	_qcons
+	movl	d0,a2@+
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+312,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+	movl	d0,a4@(20)
+	jra	L00401
+L00402:
+	movl	a4@(32),a5
+	movl	a5@,a1
+	movl	a1@,a4@(36)
+	movl	a3@(484),a2@+
+	movl	a3@(408),a2@+
+	movl	a4@(8),a2@+
+	movl	d7,a2@+
+	jbsr	_qcons
+	movl	d0,a2@+
+	jbsr	_qcons
+	movl	d0,a2@+
+	jbsr	_qcons
+	movl	d0,a4@(12)
+	movl	a4@(20),a2@+	|(calling append)
+	movl	a3@(492),a2@+
+	movl	a3@(492),a2@+
+	movl	d7,a2@+
+	jbsr	_qcons
+	movl	d0,a2@+
+	jbsr	_qcons
+	movl	d0,a2@+
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+312,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+	movl	d0,a4@(20)
+L00401:
+	jra	L00399
+L00400:
+	movl	a4@(32),a5
+	cmpl	a5@,d7
+	jeq	L00406
+	movl	a3@(496),a2@+
+	movl	a4@(32),a5
+	movl	a5@,a0
+	movl	a0@(4),d0
+	movl	a2@-,d6
+	cmpl	d0,d6
+	jne	L00405
+L00406:
+	movl	a4@(32),a5
+	movl	a5@,a4@(36)
+	movl	a3@(500),a2@+
+	movl	a4@(8),a2@+
+	movl	d7,a2@+
+	jbsr	_qcons
+	movl	d0,a2@+
+	jbsr	_qcons
+	movl	d0,a4@(12)
+	movl	a4@(20),a2@+	|(calling append)
+	movl	a3@(496),a2@+
+	movl	d7,a2@+
+	jbsr	_qcons
+	movl	d0,a2@+
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+312,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+	movl	d0,a4@(20)
+	jra	L00404
+L00405:
+	movl	a4@(32),a5
+	movl	a5@,a1
+	movl	a1@,a4@(36)
+	movl	a3@(484),a2@+
+	movl	a3@(500),a2@+
+	movl	a4@(8),a2@+
+	movl	d7,a2@+
+	jbsr	_qcons
+	movl	d0,a2@+
+	jbsr	_qcons
+	movl	d0,a2@+
+	jbsr	_qcons
+	movl	d0,a4@(12)
+	movl	a4@(20),a2@+	|(calling append)
+	movl	a3@(496),a2@+
+	movl	a3@(492),a2@+
+	movl	d7,a2@+
+	jbsr	_qcons
+	movl	d0,a2@+
+	jbsr	_qcons
+	movl	d0,a2@+
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+312,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+	movl	d0,a4@(20)
+L00404:
+L00399:
+	jra	L00397
+L00398:
+	movl	a3@(492),a2@+
+	movl	a4@(32),a1
+	movl	a1@(4),d0
+	movl	a2@-,d6
+	cmpl	d0,d6
+	jne	L00407
+	movl	a3@(484),a2@+
+	movl	a4@(8),a2@+	|(calling e-cvt)
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+80,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	d0,a4@(12)
+	movl	a4@(12),a0
+	movl	a0@(4),d0
+	movl	a2@-,d6
+	cmpl	d0,d6
+	jeq	L00407
+	movl	a4@(32),a5
+	movl	a5@,a4@(36)
+	movl	a3@(484),a2@+
+	movl	a4@(12),a2@+
+	jbsr	_qcons
+	movl	d0,a4@(12)
+	movl	a4@(20),a2@+	|(calling append)
+	movl	a3@(492),a2@+
+	movl	d7,a2@+
+	jbsr	_qcons
+	movl	d0,a2@+
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+312,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+	movl	d0,a4@(20)
+	jra	L00397
+L00407:
+	movl	a4@(8),a2@+	|(calling e-cvt)
+	lea	a2@(-4),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+80,a5
+	jbsr	a5@
+	lea	a2@(-4),a2
+	movl	d0,a4@(12)
+	movl	a4@(32),a4@(36)
+L00397:
+	cmpl	a4@(36),d7
+	jeq	L00410
+	movl	a3@(496),a2@+	|(calling d-alloc-register)
+	cmpl	a4@(28),d7
+	jeq	L00412
+	movl	d7,d0
+	jra	L00411
+L00412:
+	movl	a3@(356),d0
+L00411:
+	movl	d0,a2@+
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+320,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+	movl	d0,a4@(8)
+	movl	a4@(12),a2@+	|(calling d-movespec)
+	movl	a4@(8),a2@+
+	lea	a2@(-8),a5
+	movl	a5,_lbot
+	movl	a2,_np
+	movl	trantb+304,a5
+	jbsr	a5@
+	lea	a2@(-8),a2
+	jra	L00409
+L00410:
+	movl	d7,d0
+L00409:
+	movl	a4@(36),a4@(32)
+	jra	L00385
+L00387:
+	subql	#8,a2
+	movl	a3@(140),a5
+	cmpl	a5@,d7
+	jeq	L00414
+	movl	a3@(504),a2@+
+	movl	a3@(144),a5
+	movl	a5@,a2@+
+	jbsr	_qcons
+	movl	a3@(144),a5
+	movl	d0,a5@
+	jra	L00413
+L00414:
+	movl	d7,d0
+L00413:
+	movl	d7,d0
+L00365:
+	subl	#32,a2
+	moveml	a6@(-24),#L00364
+	unlk	a6
+	rts
+L00364 = 15552
+L00363 = 24
+bind_org:
+	linker_size = 	127
+	trans_size = 	41
+	.long	99
+	.long	99
+	.long	99
+	.long	0
+	.long	0
+	.long	0
+	.long	0
+	.long	0
+	.long	0
+	.long	0
+	.long	0
+	.long	0
+	.long	0
+	.long	0
+	.long	0
+	.long	0
+	.long	0
+	.long	0
+	.long	0
+	.long	0
+	.long	0
+	.long	0
+	.long	0
+	.long -1
+lit_org:
+.asciz "v-form"
+.asciz "(t)"
+.asciz "g-cc"
+.asciz "g-ret"
+.asciz "g-loc"
+.asciz "Nil"
+.asciz "g-ftype"
+.asciz "lexpr"
+.asciz "\"?Error: \""
+.asciz "\"%.2f\""
+.asciz "float-format"
+.asciz "v-ifile"
+.asciz "\": \""
+.asciz "g-fname"
+.asciz "\": \""
+.asciz "\" arg only allowed in lexprs\""
+.asciz "er-fatal"
+.asciz "Comp-error"
+.asciz "fl-inter"
+.asciz "g-args"
+.asciz "\" arg expression is for non local lexpr \""
+.asciz "fixnum"
+.asciz "reg"
+.asciz "(-4 a4)"
+.asciz "d0"
+.asciz "(% -8 a4 d0)"
+.asciz "(% -8 a4 d0)"
+.asciz "(-4 a4)"
+.asciz "(fixnum 0)"
+.asciz "(-4 a4)"
+.asciz "(% -8 a4 d0)"
+.asciz "(% -8 a4 d0)"
+.asciz "(-4 a4)"
+.asciz "(-4 a4)"
+.asciz "g-skipcode"
+.asciz "fl-comments"
+.asciz "g-comments"
+.asciz "(assembler code start)"
+.asciz "(assembler code end)"
+.asciz "do"
+.asciz "xx-val"
+.asciz "xx-lis"
+.asciz "((cdr xx-lis))"
+.ascii "(((null xx-lis)) (cond ((eq xx-val (caar xx-lis)) (return (c"
+.asciz "ar xx-lis)))))"
+.asciz "\"#1783\""
+.asciz "t"
+.asciz "\"#5\""
+.asciz "\"#9\""
+.asciz "g-labs"
+.asciz "tstl"
+.asciz "_retval"
+.asciz "jeq"
+.asciz "_lispretval"
+.asciz "jra"
+.asciz "g-locs"
+.asciz "\"sp@-\""
+.asciz "$"
+.asciz "$global-reg$"
+.asciz "a2"
+.asciz "\"_np\""
+.asciz "\"_lbot\""
+.asciz "\"jbsr\""
+.asciz "_qpushframe"
+.asciz "_errp"
+.asciz "(catcherrset . 0)"
+.asciz "a5"
+.asciz "12"
+.asciz "movl"
+.asciz "sp"
+.asciz "(beginning cond)"
+.asciz "\"bad cond clause \""
+.asciz "(quote t)"
+.asciz "g-reguse"
+.asciz "_qcons"
+.asciz "g-loccnt"
+.asciz "Starting"
+.asciz "d-supercxr:"
+.asciz "vform:"
+.asciz "immed"
+.asciz "d2"
+.asciz "areg"
+.asciz "a0"
+.asciz "\"sp@+\""
+.asciz "flonum-block"
+.asciz "\" d-supercxr : flonum stuff not done.\""
+.asciz "movq"
+.asciz "r4"
+.asciz "_qnewdoub"
+.asciz "stack"
+.asciz "a1"
+.asciz "fixnum-block"
+.asciz "lea"
+.asciz "_qnewint"
+.asciz "\"Done with d-supercxr\""
+.asciz "getdata"
+.asciz "getd"
+.asciz "quote"
+.asciz "\"d-structgen: bad args(1)\""
+.asciz "d6"
+.asciz "asll"
+.asciz "($ 2)"
+.asciz "%"
+.asciz "0"
+.asciz "(d6)"
+.asciz "hunk"
+.asciz "starting"
+.asciz "d-superrplacx"
+.asciz "::"
+.asciz "="
+.asciz "\"flonum stuff not in yet\""
+.asciz "cdr"
+.asciz "movaq"
+.asciz "(0 d0)"
+.asciz "\"*(sp)+\""
+.asciz "(+ a2)"
+.asciz "(racc * 0 sp)"
+.asciz "(- a2)"
+.asciz "(d-superrplacx done)"
+.asciz "(starting cc-cxxr)"
+.asciz "bind"
+.asciz "vstack"
+.asciz "*"
+.asciz "(0 a5)"
+.asciz "d"
+.asciz "a"
+.asciz "4"
+.asciz "(done with cc-cxxr)"
+.asciz "d-genlab"
+.asciz "d-exp"
+.asciz "e-goto"
+.asciz "e-label"
+.asciz "d-move"
+.asciz "d-clearreg"
+.asciz "patom"
+.asciz "terpri"
+.asciz "length"
+.asciz "e-sub"
+.asciz "e-cvt"
+.asciz "e-move"
+.asciz "e-cmp"
+.asciz "d-handlecc"
+.asciz "e-gotonil"
+.asciz "e-write1"
+.asciz "d-typecmplx"
+.asciz "d-callbig"
+.asciz "d-typesimp"
+.asciz "d-pushframe"
+.asciz "e-write2"
+.asciz "d-popframe"
+.asciz "e-write3"
+.asciz "*"
+.asciz "e-add"
+.asciz "equal"
+.asciz "d-exps"
+.asciz "copy"
+.asciz "d-pushargs"
+.asciz "d-supercxr"
+.asciz "d-fixnumexp"
+.asciz "d-regused"
+.asciz "d-simple"
+.asciz "d-semisimple"
+.asciz "d-structgen"
+.asciz "*break"
+.asciz "d-superrplacx"
+.asciz "d-bestreg"
+.asciz "d-movespec"
+.asciz "append"
+.asciz "d-alloc-register"
+.asciz "(putprop (quote chead) t (quote version))"
+.ascii "(cond ((not (or (status feature for-vax) (status feature for"
+.asciz "-68k))) (sstatus feature for-vax)))"
+.ascii "(cond ((not (boundp (quote Liszt-file-names))) (setq Liszt-f"
+.ascii "ile-names (ncons \"$Header: funa.l,v 1.11 83/08/28 17:14:35 l"
+.ascii "ayer Exp $\"))) (t (setq Liszt-file-names (append1 Liszt-file"
+.ascii "-names \"$Header: funa.l,v 1.11 83/08/28 17:14:35 layer Exp $"
+.asciz "\"))))"
+.asciz "cc-and"
+.asciz "cc-arg"
+.asciz "c-assembler-code"
+.asciz "cm-assq"
+.asciz "cc-atom"
+.asciz "c-bcdcall"
+.asciz "cc-bcdp"
+.asciz "cc-bigp"
+.asciz "c-*catch"
+.asciz "d-pushframe"
+.asciz "d-popframe"
+.asciz "c-cond"
+.asciz "c-cons"
+.asciz "cc-cxr"
+.asciz "d-supercxr"
+.asciz "d-semisimple"
+.asciz "d-structgen"
+.asciz "c-rplacx"
+.asciz "d-superrplacx"
+.asciz "cc-cxxr"
+lit_end:
+.data | this is just for documentation 
+.asciz "@(#)Compiled by Liszt 68000 version 8.39a on Thu Feb  2 16:43:38 1989"
+.asciz "$Header: decl.l,v 1.8 83/08/28 17:13:00 layer Exp $"
+.asciz "$Header: array.l,v 1.7 83/08/28 17:12:39 layer Exp $"
+.asciz "$Header: vector.l,v 1.11 83/11/22 10:13:48 jkf Exp $"
+.asciz "$Header: datab.l,v 1.5 83/08/28 17:14:27 layer Exp $"
+.asciz "$Header: expr.l,v 1.12 83/09/06 21:46:46 layer Exp $"
+.asciz "$Header: io.l,v 1.16 83/12/06 15:50:22 sklower Exp $"
+.asciz "$Header: funa.l,v 1.11 83/08/28 17:14:35 layer Exp $"
+.asciz "$Header: funb.l,v 1.12 83/08/28 17:14:58 layer Exp $"
+.asciz "$Header: func.l,v 1.13 84/10/18 12:36:57 jkf Exp $"
+.asciz "$Header: tlev.l,v 1.16 84/01/13 15:06:43 jkf Exp $"
+.asciz "$Header: instr.l,v 1.7 84/01/05 18:40:55 jkf Exp $"
+.asciz "$Header: fixnum.l,v 1.14 83/08/28 17:13:38 layer Exp $"
+.asciz "$Header: util.l,v 1.14 83/08/28 17:13:11 layer Exp $"

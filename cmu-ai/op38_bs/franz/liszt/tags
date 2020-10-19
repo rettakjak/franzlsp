@@ -1,0 +1,295 @@
+*arginfo	../decl.l	/^(def *arginfo$/
+*args	../decl.l	/^(def *args$/
+*expr	../decl.l	/^(defun *expr fexpr (args)$/
+*fexpr	../decl.l	/^(defun *fexpr fexpr (args)$/
+*lexpr	../decl.l	/^(defun *lexpr fexpr (args)$/
+Cstackspace	../util.l	/^(defun Cstackspace ()$/
+Liszt-file	../cmacros.l	/^(defmacro Liszt-file (name rcs-string)$/
+Push	../cmacros.l	/^(defmacro Push (atm val)$/
+c-*catch	../funa.l	/^(defun c-*catch nil$/
+c-*throw	../func.l	/^(defun c-*throw nil$/
+c-*throw	../func.l	/^(defun c-*throw nil$/
+c-Internal-bcdcall	../funb.l	/^(defun c-Internal-bcdcall nil$/
+c-\\	../fixnum.l	/^(defun c-\\ nil$/
+c-assembler-code	../funa.l	/^(defun c-assembler-code nil$/
+c-bcdcall	../funa.l	/^(defun c-bcdcall nil$/
+c-boole	../funa.l	/^(defun c-boole nil$/
+c-cond	../funa.l	/^(defun c-cond nil$/
+c-cons	../funa.l	/^(defun c-cons nil$/
+c-declare	../funb.l	/^(defun c-declare nil nil)$/
+c-do	../funb.l	/^(defun c-do nil$/
+c-errset	../funb.l	/^(defun c-errset nil$/
+c-fixnumop	../fixnum.l	/^(defun c-fixnumop nil$/
+c-funcall	../funb.l	/^(defun c-funcall nil$/
+c-get	../funb.l	/^(defun c-get nil$/
+c-go	../funb.l	/^(defun c-go nil$/
+c-internal-bind-vars	../func.l	/^(defun c-internal-bind-vars nil$/
+c-internal-fixnum-box	../funb.l	/^(defun c-internal-fixnum-box ()$/
+c-internal-unbind-vars	../func.l	/^(defun c-internal-unbind-vars nil$/
+c-lambexp	../funb.l	/^(defun c-lambexp nil$/
+c-list	../funb.l	/^(defun c-list nil$/
+c-prog	../func.l	/^(defun c-prog nil$/
+c-progv	../func.l	/^(defun c-progv nil$/
+c-return	../func.l	/^(defun c-return nil$/
+c-rplaca	../func.l	/^(defun c-rplaca nil$/
+c-rplaca	../func.l	/^(defun c-rplaca nil$/
+c-rplacd	../func.l	/^(defun c-rplacd nil$/
+c-rplacd	../func.l	/^(defun c-rplacd nil$/
+c-rplacx	../funa.l	/^(defun c-rplacx nil$/
+c-setarg	../func.l	/^(defun c-setarg nil$/
+c-vsize	../vector.l	/^(defun c-vsize nil$/
+c-vsize-byte	../vector.l	/^(defun c-vsize-byte nil$/
+c-vsize-word	../vector.l	/^(defun c-vsize-word nil$/
+cc-<&	../fixnum.l	/^(defun cc-<& nil$/
+cc->&	../fixnum.l	/^(defun cc->& nil$/
+cc-and	../funa.l	/^(defun cc-and nil$/
+cc-arg	../funa.l	/^(defun cc-arg nil$/
+cc-atom	../funa.l	/^(defun cc-atom nil$/
+cc-bcdp	../funa.l	/^(defun cc-bcdp nil$/
+cc-bigp	../funa.l	/^(defun cc-bigp nil$/
+cc-cxr	../funa.l	/^(defun cc-cxr nil$/
+cc-cxxr	../funa.l	/^(defun cc-cxxr (arg pat)$/
+cc-cxxr	../funa.l	/^(defun cc-cxxr (arg pat)$/
+cc-dtpr	../funb.l	/^(defun cc-dtpr nil$/
+cc-eq	../funb.l	/^(defun cc-eq nil$/
+cc-equal	../funb.l	/^(defun cc-equal nil$/
+cc-fixp	../funb.l	/^(defun cc-fixp nil$/
+cc-floatp	../funb.l	/^(defun cc-floatp nil$/
+cc-function	../funb.l	/^(defun cc-function nil$/
+cc-ignore	../funb.l	/^(defun cc-ignore nil$/
+cc-memq	../funb.l	/^(defun cc-memq nil$/
+cc-memq	../funb.l	/^(defun cc-memq nil$/
+cc-not	../func.l	/^(defun cc-not nil$/
+cc-numberp	../func.l	/^(defun cc-numberp nil$/
+cc-offset-cxr	../funb.l	/^(defun cc-offset-cxr nil$/
+cc-oneminus	../fixnum.l	/^(defun cc-oneminus nil$/
+cc-oneminus	../fixnum.l	/^(defun cc-oneminus nil$/
+cc-oneplus	../fixnum.l	/^(defun cc-oneplus nil$/
+cc-oneplus	../fixnum.l	/^(defun cc-oneplus nil$/
+cc-or	../func.l	/^(defun cc-or nil$/
+cc-quote	../func.l	/^(defun cc-quote nil$/
+cc-setq	../func.l	/^(defun cc-setq nil$/
+cc-stringp	../func.l	/^(defun cc-stringp nil$/
+cc-symbolp	../func.l	/^(defun cc-symbolp nil$/
+cc-typep	../func.l	/^(defun cc-typep nil$/
+cc-typep	../func.l	/^(defun cc-typep nil$/
+cc-vectorip	../vector.l	/^(defun cc-vectorip nil$/
+cc-vectorp	../vector.l	/^(defun cc-vectorp nil$/
+cc-vref	../vector.l	/^(defun cc-vref ()$/
+cc-vrefi-byte	../vector.l	/^(defun cc-vrefi-byte ()$/
+cc-vrefi-long	../vector.l	/^(defun cc-vrefi-long ()$/
+cc-vrefi-word	../vector.l	/^(defun cc-vrefi-word ()$/
+cc-vset	../vector.l	/^(defun cc-vset ()$/
+cc-vseti-byte	../vector.l	/^(defun cc-vseti-byte ()$/
+cc-vseti-long	../vector.l	/^(defun cc-vseti-long ()$/
+cc-vseti-word	../vector.l	/^(defun cc-vseti-word ()$/
+checkfatal	../tlev.l	/^(def checkfatal$/
+cm-<	../fixnum.l	/^(defun cm-< nil$/
+cm-=	../fixnum.l	/^(defun cm-= nil$/
+cm-=&	../fixnum.l	/^(defun cm-=& nil$/
+cm->	../fixnum.l	/^(defun cm-> nil$/
+cm-assq	../funa.l	/^(defun cm-assq nil$/
+cm-fixnum-cxr	../funb.l	/^(defun cm-fixnum-cxr ()$/
+cm-getaccess	../funb.l	/^(defun cm-getaccess nil `(cdr ,(cadr v-form)))$/
+cm-getaux	../funb.l	/^(defun cm-getaux  nil `(car ,(cadr v-form)))$/
+cm-getd	../funb.l	/^(defun cm-getd nil `(cxr 2 ,(cadr v-form)))$/
+cm-getdata	../funb.l	/^(defun cm-getdata nil `(cxr 2 ,(cadr v-form)))$/
+cm-getdisc	../funb.l	/^(defun cm-getdisc nil `(cxr 1 ,(cadr v-form)))$/
+cm-map	../funb.l	/^(defun cm-map nil$/
+cm-mapc	../funb.l	/^(defun cm-mapc nil$/
+cm-mapcan	../funb.l	/^(defun cm-mapcan nil$/
+cm-mapcar	../funb.l	/^(defun cm-mapcar nil$/
+cm-mapcon	../funb.l	/^(defun cm-mapcon nil$/
+cm-maplist	../funb.l	/^(defun cm-maplist nil$/
+cm-ncons	../func.l	/^(defun cm-ncons nil$/
+cm-prog1	../func.l	/^(defun cm-prog1 nil$/
+cm-prog2	../func.l	/^(defun cm-prog2 nil$/
+cm-progn	../func.l	/^(defun cm-progn nil$/
+cm-symeval	../func.l	/^(defun cm-symeval nil$/
+cm-zerop	../func.l	/^(defun cm-zerop nil$/
+cm-zerop	../func.l	/^(defun cm-zerop nil$/
+comp-err	../cmacros.l	/^(def comp-err$/
+comp-gerr	../cmacros.l	/^(def comp-gerr$/
+comp-msg	../cmacros.l	/^(def comp-msg$/
+comp-note	../cmacros.l	/^(def comp-note$/
+comp-warn	../cmacros.l	/^(def comp-warn$/
+compile-fcn	../decl.l	/^(defmacro compile-fcn (name fcnname indicator &optional (args nil args-p))$/
+d-allfixnumargs	../datab.l	/^(defun d-allfixnumargs (forms)$/
+d-alloc-register	../util.l	/^(defun d-alloc-register (type name)$/
+d-allocreg	../util.l	/^(defun d-allocreg (name)$/
+d-argcheckit	../expr.l	/^(defun d-argcheckit (info numargs class)$/
+d-argnumchk	../expr.l	/^(defun d-argnumchk (class)$/
+d-arrayindexcomp	../array.l	/^(defun d-arrayindexcomp (actual formal)$/
+d-asciiout	../io.l	/^(defun d-asciiout (args)$/
+d-ashl	../instr.l	/^(defun d-ashl (count src dst)$/
+d-asll	../instr.l	/^(defun d-asll (count src dst)$/
+d-asrl	../instr.l	/^(defun d-asrl (count src dst)$/
+d-bcdcall	../expr.l	/^(defun d-bcdcall (n)$/
+d-bcdcall	../expr.l	/^(defun d-bcdcall (n)$/
+d-bestreg	../util.l	/^(defun d-bestreg (name pat)$/
+d-bindlamb	../funb.l	/^(defun d-bindlamb (vrbs)$/
+d-bindlrec	../funb.l	/^(defun d-bindlrec (vrb locs specs lev)$/
+d-bindprg	../func.l	/^(defun d-bindprg (spcs locs)$/
+d-bindtab	../io.l	/^(defun d-bindtab nil$/
+d-booleexpand	../funa.l	/^(defun d-booleexpand (form)$/
+d-boolexlate	../funa.l	/^(defun d-boolexlate (form)$/
+d-callbig	../expr.l	/^(defun d-callbig (name args bcdp)$/
+d-callbig	../expr.l	/^(defun d-callbig (name args bcdp)$/
+d-calldirect	../expr.l	/^(defun d-calldirect (name c)$/
+d-calldirect	../expr.l	/^(defun d-calldirect (name c)$/
+d-calltran	../expr.l	/^(defun d-calltran (name c)$/
+d-calltran	../expr.l	/^(defun d-calltran (name c)$/
+d-checkforfixedargs	../tlev.l	/^(defun d-checkforfixedargs (fcnname number)$/
+d-classify	../func.l	/^(defun d-classify (lst)$/
+d-clearreg	../util.l	/^(defun d-clearreg n$/
+d-clearuse	../util.l	/^(defun d-clearuse (varib)$/
+d-cmp	../cmacros.l	/^(defmacro d-cmp (arg1 arg2)$/
+d-cmpnil	../cmacros.l	/^(defmacro d-cmpnil (iadr)$/
+d-collapse	../fixnum.l	/^(defun d-collapse (form op)$/
+d-cxxr	../expr.l	/^(defun d-cxxr (name)$/
+d-dodef	../tlev.l	/^(defun d-dodef (form)$/
+d-dostore	../array.l	/^(defun d-dostore (spec value indexes)$/
+d-dotailrecursion	../expr.l	/^(defun d-dotailrecursion (name args)$/
+d-exp	../expr.l	/^(defun d-exp (v-form)$/
+d-exps	../expr.l	/^(defun d-exps (exps)$/
+d-findfirstprop	../datab.l	/^(defun d-findfirstprop (name type)$/
+d-fini	../io.l	/^(defun d-fini nil$/
+d-fixexpand	../fixnum.l	/^(defun d-fixexpand (x)$/
+d-fixnumbox	../fixnum.l	/^(defun d-fixnumbox ()$/
+d-fixnumbox	../fixnum.l	/^(defun d-fixnumbox ()$/
+d-fixnumcode	../fixnum.l	/^(defun d-fixnumcode (expr)$/
+d-fixnumcode	../fixnum.l	/^(defun d-fixnumcode (expr)$/
+d-fixnumexp	../fixnum.l	/^(defun d-fixnumexp (x)$/
+d-fixnump	../datab.l	/^(defun d-fixnump (vrb)$/
+d-fixop	../fixnum.l	/^(defun d-fixop (opcode lispopcode)$/
+d-fullmacroexpand	../util.l	/^(defun d-fullmacroexpand (form)$/
+d-functyp	../datab.l	/^(defun d-functyp (name macrochk)$/
+d-genlab	../tlev.l	/^(defun d-genlab nil$/
+d-handlearrayref	../array.l	/^(defun d-handlearrayref nil$/
+d-handlecc	../util.l	/^(defun d-handlecc nil$/
+d-inreg	../util.l	/^(defun d-inreg (name value)$/
+d-invert	../util.l	/^(defun d-invert nil$/
+d-lambbody	../funb.l	/^(defun d-lambbody (body)$/
+d-lambda-aux-body-convert	../tlev.l	/^(defun d-lambda-aux-body-convert (body auxlist)$/
+d-lambdalistcheck	../tlev.l	/^(defun d-lambdalistcheck (list body)$/
+d-loc	../datab.l	/^(defun d-loc (form)$/
+d-loclit	../datab.l	/^(defun d-loclit (form flag)$/
+d-locv	../datab.l	/^(defun d-locv (sm)$/
+d-macroexpand	../util.l	/^(defun d-macroexpand (i)$/
+d-makemask	../util.l	/^(defun d-makemask ()$/
+d-makespec	../decl.l	/^(defun d-makespec (vrb)$/
+d-mapconvert	../funb.l	/^(defun d-mapconvert (access join resu form )$/
+d-matchcnt	../util.l	/^(defun d-matchcnt (want have)$/
+d-move	../instr.l	/^(defun d-move (from to)$/
+d-movespec	../instr.l	/^(defun d-movespec (from to)$/
+d-noninvert	../util.l	/^(defun d-noninvert nil$/
+d-olddo-to-newdo	../funb.l	/^(defun d-olddo-to-newdo (v-l)$/
+d-outerlambdacomp	../tlev.l	/^(defun d-outerlambdacomp (funname lambdalist body)$/
+d-popframe	../funa.l	/^(defun d-popframe ()$/
+d-prelude	../io.l	/^(defun d-prelude nil$/
+d-printautorun	../io.l	/^(defun d-printautorun nil$/
+d-printdocstuff	../io.l	/^(defun d-printdocstuff nil$/
+d-pushargs	../expr.l	/^(defun d-pushargs (args)$/
+d-pushframe	../funa.l	/^(defun d-pushframe (class arg1 arg2)$/
+d-regtype	../util.l	/^(defun d-regtype (eiadr)$/
+d-regused	../util.l	/^(defun d-regused (regname)$/
+d-rsimple	../datab.l	/^(defun d-rsimple (arg)$/
+d-scanfordecls	../funb.l	/^(defun d-scanfordecls (forms)$/
+d-semisimple	../funa.l	/^(defun d-semisimple (form)$/
+d-setqexpand	../util.l	/^(defun d-setqexpand (form)$/
+d-shiftcheck	../fixnum.l	/^(defun d-shiftcheck (operator operand)$/
+d-simple	../datab.l	/^(defun d-simple (arg)$/
+d-specialp	../datab.l	/^(defun d-specialp (vrb)$/
+d-structgen	../funa.l	/^(defun d-structgen (index base width)$/
+d-structgen	../funa.l	/^(defun d-structgen (index base width)$/
+d-supercxr	../funa.l	/^(defun d-supercxr (type offsetonly)$/
+d-supercxr	../funa.l	/^(defun d-supercxr (type offsetonly)$/
+d-superrplacx	../funa.l	/^(defun d-superrplacx (type)$/
+d-superrplacx	../funa.l	/^(defun d-superrplacx (type)$/
+d-toplevmacroexpand	../fixnum.l	/^(defun d-toplevmacroexpand (x)$/
+d-tranloc	../datab.l	/^(defun d-tranloc (fname)$/
+d-tst	../cmacros.l	/^(defmacro d-tst (arg)$/
+d-typecmplx	../util.l	/^(defun d-typecmplx (arg vals)$/
+d-typecmplx	../util.l	/^(defun d-typecmplx (arg vals)$/
+d-typesimp	../util.l	/^(defun d-typesimp (arg val)$/
+d-typesimp	../util.l	/^(defun d-typesimp (arg val)$/
+d-unbind	../func.l	/^(defun d-unbind nil$/
+d-vectorindexcode	../vector.l	/^(defun d-vectorindexcode ()$/
+d-vectorsize	../vector.l	/^(defun d-vectorsize (form shift)$/
+d-vref	../vector.l	/^(defun d-vref (type)$/
+d-vset	../vector.l	/^(defun d-vset (type)$/
+d-wnaerr	../tlev.l	/^(defun d-wnaerr (name min max)$/
+declare-handler	../decl.l	/^(defmacro declare-handler (args name type toplevind)$/
+decr	../cmacros.l	/^(defmacro decr (atm)$/
+do-lisztrc-check	../tlev.l	/^(defun do-lisztrc-check nil$/
+doevalwhen	../decl.l	/^(def doevalwhen $/
+e-Cstack	../cmacros.l	/^(defmacro e-Cstack (src)$/
+e-Lstack	../cmacros.l	/^(defmacro e-Lstack (src)$/
+e-add	../cmacros.l	/^(defmacro e-add (src dst)$/
+e-add	../instr.l	/^(defun e-add (src dst)$/
+e-add3	../cmacros.l	/^(defmacro e-add3 (s1 s2 dest)$/
+e-add3	../cmacros.l	/^(defmacro e-add3 (s1 s2 dest)$/
+e-call-qnewint	../cmacros.l	/^(defmacro e-call-qnewint ()$/
+e-cmp	../cmacros.l	/^(defmacro e-cmp (src dst)$/
+e-cmp	../instr.l	/^(defun e-cmp (src dst)$/
+e-cmpnil	../cmacros.l	/^(defmacro e-cmpnil (eiadr)$/
+e-cvt	../io.l	/^(defun e-cvt (arg)$/
+e-cvtas	../io.l	/^(defun e-cvtas (form)$/
+e-cvtas	../io.l	/^(defun e-cvtas (form)$/
+e-docomment	../io.l	/^(defun e-docomment nil$/
+e-dropnp	../io.l	/^(defun e-dropnp (n)$/
+e-goto	../io.l	/^(defun e-goto (lbl)$/
+e-gotonil	../io.l	/^(defun e-gotonil (lbl)$/
+e-gotot	../io.l	/^(defun e-gotot (lbl)$/
+e-jump	../io.l	/^(defun e-jump (l)$/
+e-label	../io.l	/^(defun e-label (lbl)$/
+e-move	../instr.l	/^(defun e-move (from to)$/
+e-pop	../io.l	/^(defun e-pop (nargs)$/
+e-pushnil	../io.l	/^(defun e-pushnil (nargs)$/
+e-pushnil	../io.l	/^(defun e-pushnil (nargs)$/
+e-quick-call	../cmacros.l	/^(defmacro e-quick-call (what)$/
+e-return	../io.l	/^(defun e-return nil$/
+e-setup-np-lbot	../util.l	/^(defun e-setup-np-lbot nil$/
+e-setupbind	../io.l	/^(defun e-setupbind nil$/
+e-shallowbind	../io.l	/^(defun e-shallowbind (name val)$/
+e-sub	../cmacros.l	/^(defmacro e-sub (src dst)$/
+e-sub	../instr.l	/^(defun e-sub (src dst)$/
+e-tst	../cmacros.l	/^(defmacro e-tst (src)$/
+e-uncvt	../io.l	/^(defun e-uncvt (arg)$/
+e-unsetupbind	../io.l	/^(defun e-unsetupbind nil$/
+e-unshallowbind	../io.l	/^(defun e-unshallowbind (n)$/
+e-unshallowbind	../io.l	/^(defun e-unshallowbind (n)$/
+e-write1	../io.l	/^(defun e-write1 (lit)$/
+e-write2	../io.l	/^(defun e-write2 (lit frm)$/
+e-write2	../io.l	/^(defun e-write2 (lit frm)$/
+e-write3	../io.l	/^(defun e-write3 (lit frm1 frm2)$/
+e-write3	../io.l	/^(defun e-write3 (lit frm1 frm2)$/
+e-write4	../io.l	/^(defun e-write4 (lit frm1 frm2 frm3)$/
+e-write5	../io.l	/^(defun e-write5 (lit frm1 frm2 frm3 frm4)$/
+e-writel	../io.l	/^(defun e-writel (label)$/
+em-checknpdrop	../io.l	/^(defmacro em-checknpdrop nil$/
+em-checkskip	../io.l	/^(defmacro em-checkskip nil$/
+fixnum	../decl.l	/^(defun fixnum fexpr (args)$/
+flonum	../decl.l	/^(defun flonum fexpr (args)$/
+forcecomment	../cmacros.l	/^(defmacro forcecomment (arg)$/
+incr	../cmacros.l	/^(defmacro incr (atm)$/
+init-regmaskvec	../util.l	/^(defun init-regmaskvec ()$/
+lambda	../decl.l	/^(defun lambda fexpr (args)$/
+liszt	../tlev.l	/^(def liszt$/
+liszt-declare	../decl.l	/^(defun liszt-declare fexpr (forms)$/
+liszt-form	../tlev.l	/^(def liszt-form$/
+liszt-interrupt-signal	../tlev.l	/^(defun liszt-interrupt-signal (sig)$/
+lisztinit	../tlev.l	/^(def lisztinit$/
+localf	../decl.l	/^(def localf$/
+macarray	../decl.l	/^(def macarray $/
+macros	../decl.l	/^(def macros $/
+makecomment	../cmacros.l	/^(defmacro makecomment (arg)$/
+niceprint	../cmacros.l	/^(def niceprint$/
+nlambda	../decl.l	/^(defun nlambda fexpr (args)$/
+notype	../decl.l	/^(defun notype fexpr (args)$/
+sfilewrite	../cmacros.l	/^(defmacro sfilewrite (arg)$/
+sfilewriteln	../cmacros.l	/^(defmacro sfilewriteln (arg)$/
+special	../decl.l	/^(defun special fexpr (args)$/
+specials	../decl.l	/^(def specials$/
+unpush	../cmacros.l	/^(defmacro unpush (atm)$/
+unspecial	../decl.l	/^(defun unspecial fexpr (args)$/

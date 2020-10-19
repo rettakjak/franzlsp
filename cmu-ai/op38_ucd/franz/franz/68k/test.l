@@ -1,0 +1,2 @@
+(putprop 'test "loadtest" 'autoload)
+

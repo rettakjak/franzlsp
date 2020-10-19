@@ -1,0 +1,367 @@
+date
+Mon Dec 18 12:15:50 GMT 1989
+(cd utils ; make LibDir=/usr/groups/hol/franz/lisplib all)
+(cd /usr/groups/hol/franz/lisplib; make as nld)
+`as' is up to date.
+`nld' is up to date.
+(cd franz/68k; make DFLAG=-DOS4 LDFLAG=-Bstatic LibDir=/usr/groups/hol/franz/lisplib ObjDir=/usr/groups/hol/franz/bin snlisp)
+as  -mc68020 -o ../lowaux.o ../lowaux.s
+cc  -S -O -pg  -I../h -f68881 -DOS4  ../low.c; sed 's/data$/text/' < low.s > Low.s
+as -o ../low.o Low.s; rm Low.s low.s
+cc  -c -O -pg  -I../h -f68881 -DOS4  ../alloc.c;\
+mv `basename ../alloc.o` x; mv x ../alloc.o
+cc  -c -O -pg  -I../h -f68881 -DOS4  ../data.c;\
+mv `basename ../data.o` x; mv x ../data.o
+cc  -c -O -pg  -I../h -f68881 -DOS4  ../lisp.c;\
+mv `basename ../lisp.o` x; mv x ../lisp.o
+cc  -c -O -pg  -I../h -f68881 -DOS4  ../eval.c;\
+mv `basename ../eval.o` x; mv x ../eval.o
+cc  -c -O -pg  -I../h -f68881 -DOS4  ../eval2.c;\
+mv `basename ../eval2.o` x; mv x ../eval2.o
+cc  -c -O -pg  -I../h -f68881 -DOS4  ../inits.c;\
+mv `basename ../inits.o` x; mv x ../inits.o
+cc  -c -O -pg  -I../h -f68881 -DOS4  ../io.c;\
+mv `basename ../io.o` x; mv x ../io.o
+cc  -c -O -pg  -I../h -f68881 -DOS4  ../error.c;\
+mv `basename ../error.o` x; mv x ../error.o
+cc  -c -O -pg  -I../h -f68881 -DOS4  ../sysat.c;\
+mv `basename ../sysat.o` x; mv x ../sysat.o
+cc  -c -O -pg  -I../h -f68881 -DOS4  ../lam1.c;\
+mv `basename ../lam1.o` x; mv x ../lam1.o
+cc  -c -O -pg  -I../h -f68881 -DOS4  ../lam2.c;\
+mv `basename ../lam2.o` x; mv x ../lam2.o
+"../lam2.c", line 302: warning: illegal pointer combination
+"../lam2.c", line 306: warning: illegal pointer combination
+cc  -c -O -pg  -I../h -f68881 -DOS4  ../lam3.c;\
+mv `basename ../lam3.o` x; mv x ../lam3.o
+cc  -c -O -pg  -I../h -f68881 -DOS4  ../lam4.c;\
+mv `basename ../lam4.o` x; mv x ../lam4.o
+cc  -c -O -pg  -I../h -f68881 -DOS4  ../lam5.c;\
+mv `basename ../lam5.o` x; mv x ../lam5.o
+"../lam5.c", line 145: warning: illegal pointer combination
+cc  -c -O -pg  -I../h -f68881 -DOS4  ../lam6.c;\
+mv `basename ../lam6.o` x; mv x ../lam6.o
+cc  -c -O -pg  -I../h -f68881 -DOS4  ../lam7.c;\
+mv `basename ../lam7.o` x; mv x ../lam7.o
+"../lam7.c", line 194: warning: illegal pointer combination
+"../lam7.c", line 201: warning: illegal pointer combination
+cc  -c -O -pg  -I../h -f68881 -DOS4  ../lam8.c;\
+mv `basename ../lam8.o` x; mv x ../lam8.o
+cc  -c -O -pg  -I../h -f68881 -DOS4  ../lam9.c;\
+mv `basename ../lam9.o` x; mv x ../lam9.o
+cc  -c -O -pg  -I../h -f68881 -DOS4  ../lamr.c;\
+mv `basename ../lamr.o` x; mv x ../lamr.o
+cc  -c -O -pg  -I../h -f68881 -DOS4  ../lamp.c;\
+mv `basename ../lamp.o` x; mv x ../lamp.o
+cc  -c -O -pg  -I../h -f68881 -DOS4  ../fex1.c;\
+mv `basename ../fex1.o` x; mv x ../fex1.o
+cc  -c -O -pg  -I../h -f68881 -DOS4  ../fex2.c;\
+mv `basename ../fex2.o` x; mv x ../fex2.o
+cc  -c -O -pg  -I../h -f68881 -DOS4  ../fex3.c;\
+mv `basename ../fex3.o` x; mv x ../fex3.o
+cc  -c -O -pg  -I../h -f68881 -DOS4  ../fex4.c;\
+mv `basename ../fex4.o` x; mv x ../fex4.o
+cc  -c -O -pg  -I../h -f68881 -DOS4  ../fexr.c;\
+mv `basename ../fexr.o` x; mv x ../fexr.o
+cc  -c -O -pg  -I../h -f68881 -DOS4  ../fpipe.c;\
+mv `basename ../fpipe.o` x; mv x ../fpipe.o
+"../fpipe.c", line 121: warning: illegal pointer combination
+cc  -c -O -pg  -I../h -f68881 -DOS4  ../subbig.c;\
+mv `basename ../subbig.o` x; mv x ../subbig.o
+cc  -c -O -pg  -I../h -f68881 -DOS4  ../pbignum.c;\
+mv `basename ../pbignum.o` x; mv x ../pbignum.o
+cc  -c -O -pg  -I../h -f68881 -DOS4  ../divbig.c;\
+mv `basename ../divbig.o` x; mv x ../divbig.o
+cc  -c -O -pg  -I../h -f68881 -DOS4  ../ffasl.c;\
+mv `basename ../ffasl.o` x; mv x ../ffasl.o
+cc  -c -O -pg  -I../h -f68881 -DOS4  ../fasl.c;\
+mv `basename ../fasl.o` x; mv x ../fasl.o
+cc  -c -O -pg  -I../h -f68881 -DOS4  ../trace.c;\
+mv `basename ../trace.o` x; mv x ../trace.o
+cc  -c -O -pg  -I../h -f68881 -DOS4  ../evalf.c;\
+mv `basename ../evalf.o` x; mv x ../evalf.o
+cc  -c -O -pg  -I../h -f68881 -DOS4  ../frame.c;\
+mv `basename ../frame.o` x; mv x ../frame.o
+cc  -c -O -pg  -I../h -f68881 -DOS4  ../lamgc.c;\
+mv `basename ../lamgc.o` x; mv x ../lamgc.o
+cc  -c -O -pg  -I../h -f68881 -DOS4  68k.c;\
+mv `basename 68k.o` x; mv x 68k.o
+cc  -c -O -pg  -I../h -f68881 -DOS4  adbig.c;\
+mv `basename adbig.o` x; mv x adbig.o
+as  -mc68020 -o callg.o callg.s
+cc  -c -O -pg  -I../h -f68881 -DOS4  calqhat.c;\
+mv `basename calqhat.o` x; mv x calqhat.o
+as  -mc68020 -o dmlad.o dmlad.s
+cc  -c -O -pg  -I../h -f68881 -DOS4  dodiv.c;\
+mv `basename dodiv.o` x; mv x dodiv.o
+cc  -c -O -pg  -I../h -f68881 -DOS4  dsmult.c;\
+mv `basename dsmult.o` x; mv x dsmult.o
+as  -mc68020 -o ediv.o ediv.s
+as  -mc68020 -o emul.o emul.s
+cc  -c -O -pg  -I../h -f68881 -DOS4  exarith.c;\
+mv `basename exarith.o` x; mv x exarith.o
+cc  -c -O -pg  -I../h -f68881 -DOS4  fixbits.c;\
+mv `basename fixbits.o` x; mv x fixbits.o
+as  -mc68020 -o hack.o hack.s
+cc  -c -O -pg  -I../h -f68881 -DOS4  inewint.c;\
+mv `basename inewint.o` x; mv x inewint.o
+cc  -c -O -pg  -I../h -f68881 -DOS4  mlsb.c;\
+mv `basename mlsb.o` x; mv x mlsb.o
+cc  -c -O -pg  -I../h -f68881 -DOS4  mulbig.c;\
+mv `basename mulbig.o` x; mv x mulbig.o
+cc  -c -O -pg  -I../h -f68881 -DOS4  nargs.c;\
+mv `basename nargs.o` x; mv x nargs.o
+cc -I../h -E  qfuncl.c > x.s; as -o qfuncl.o x.s; rm x.s
+# must use cc -- gcc don't work
+cc  -c -O -pg  -I../h -f68881 -DOS4  nosuncore.c;\
+mv `basename nosuncore.o` x; mv x nosuncore.o
+rm -f rawlisp
+ld -Bstatic -z  -o rawlisp -e start ../lowaux.o ../low.o /lib/crt0.o ../alloc.o ../data.o \
+			68k.o adbig.o callg.o calqhat.o dmlad.o dodiv.o dsmult.o  ediv.o emul.o exarith.o fixbits.o hack.o inewint.o  mlsb.o mulbig.o nargs.o qfuncl.o ../lisp.o ../eval.o ../eval2.o ../inits.o ../io.o ../error.o  ../sysat.o ../lam1.o ../lam2.o ../lam3.o ../lam4.o ../lam5.o ../lam6.o  ../lam7.o ../lam8.o ../lam9.o ../lamr.o ../lamp.o  ../fex1.o ../fex2.o ../fex3.o ../fex4.o ../fexr.o ../fpipe.o  ../subbig.o ../pbignum.o ../divbig.o  ../ffasl.o ../fasl.o  ../trace.o ../evalf.o ../frame.o ../lamgc.o nosuncore.o   \
+			 -ltermcap /lib/Mcrt1.o -lm -lc 
+ls -l rawlisp
+-rwxr-xr-x  1 jvt        573440 Dec 18 12:25 rawlisp
+echo "(progn (setq build:load t		\
+		   build:lisp-type 'franz \
+		   build:dir '/usr/groups/hol/franz/lisplib \
+		   lisp-object-directory '/usr/groups/hol/franz/bin\
+		   lisp-library-directory '/usr/groups/hol/franz/lisplib)\
+	     (load '/usr/groups/hol/franz/lisplib/buildlisp)\
+	     (dumplisp snlisp))" | ./rawlisp
+Franz Lisp, Opus 38
+-> [load /usr/groups/hol/franz/lisplib/common2.l]
+[load /usr/groups/hol/franz/lisplib/common3.l]
+[load /usr/groups/hol/franz/lisplib/vector.l]
+[load /usr/groups/hol/franz/lisplib/array.l]
+[load /usr/groups/hol/franz/lisplib/pp.l]
+[load /usr/groups/hol/franz/lisplib/version.l]
+[load /usr/groups/hol/franz/lisplib/tpl.l]
+[load /usr/groups/hol/franz/lisplib/toplevel.l]
+nil
+-> date
+Mon Dec 18 12:28:03 GMT 1989
+(cd liszt/68k; make Lisp=../../franz/68k/snlisp snliszt)
+rm -f snliszt
+echo "(load '../cmake.l)(genl snliszt slow)" | ../../franz/68k/snlisp
+Franz Lisp, Opus 38.92
+-> [load ../cmake.l]
+t
+-> [load /usr/groups/hol/franz/lisplib/fcninfo.l]
+[load ../cmacros.l]
+[load ../const.l]
+[load ../decl.l]
+[load ../chead.l]
+[load ../array.l]
+[load ../vector.l]
+[load ../datab.l]
+[load ../expr.l]
+[load ../io.l]
+[load ../funa.l]
+[load ../funb.l]
+[load ../func.l]
+[load ../tlev.l]
+[load ../instr.l]
+[load ../fixnum.l]
+[load ../util.l]
+[load ../lversion.l]
+nil
+Liszt 68000 version 8.39a [.92]
+-> (cd liszt/68k; make Lisp=../../franz/68k/snlisp Liszt=./snliszt nliszt)
+./snliszt -xqa ../cmacros.l -o cmacros.o
+./snliszt -xqa ../array.l -o array.o
+./snliszt -xqa ../vector.l -o vector.o
+./snliszt -xqa ../datab.l -o datab.o
+./snliszt -xqa ../decl.l -o decl.o
+./snliszt -xqa ../expr.l -o expr.o
+./snliszt -xqa ../fixnum.l -o fixnum.o
+./snliszt -xqa ../instr.l -o instr.o
+./snliszt -xqa ../funa.l -o funa.o
+./snliszt -xqa ../funb.l -o funb.o
+./snliszt -xqa ../func.l -o func.o
+./snliszt -xqa ../io.l -o io.o
+./snliszt -xqa ../tlev.l -o tlev.o
+./snliszt -xqa ../util.l -o util.o
+./snliszt -xqa ../lversion.l -o lversion.o
+rm -f nliszt
+echo "(load '../cmake.l)(genl nliszt)" | ../../franz/68k/snlisp 
+Franz Lisp, Opus 38.92
+-> [load ../cmake.l]
+t
+-> [load /usr/groups/hol/franz/lisplib/fcninfo.l]
+[fasl decl.o]
+[fasl array.o]
+[fasl vector.o]
+[fasl datab.o]
+[fasl expr.o]
+[fasl io.o]
+[fasl funa.o]
+[fasl funb.o]
+[fasl func.o]
+[fasl tlev.o]
+[fasl instr.o]
+[fasl fixnum.o]
+[fasl util.o]
+[fasl lversion.o]
+nil
+Liszt 68000 version 8.39a [.92]
+-> rm -f liszt/68k/snliszt
+date
+Mon Dec 18 12:54:23 GMT 1989
+rm -f franz/68k/snlisp
+(X=`pwd`; cd franz/68k;make Liszt=$X/liszt/68k/nliszt \
+                                    ObjDir=/usr/groups/hol/franz/bin\
+			    LibDir=/usr/groups/hol/franz/lisplib\
+                                    DFLAG=-DOS4 LDFLAG=-Bstatic nlisp)
+rm -f nlisp
+(cd /usr/groups/hol/franz/lisplib ; make Liszt=/Nfs/scaup/usr2/hol/franz/liszt/68k/nliszt required)
+as  -mc68020 -o charmac.o charmac.s
+as  -mc68020 -o common0.o common0.s
+as  -mc68020 -o common1.o common1.s
+as  -mc68020 -o common2.o common2.s
+as  -mc68020 -o common3.o common3.s
+as  -mc68020 -o toplevel.o toplevel.s
+as  -mc68020 -o syntax.o syntax.s
+as  -mc68020 -o macros.o macros.s
+as  -mc68020 -o vector.o vector.s
+as  -mc68020 -o array.o array.s
+as  -mc68020 -o pp.o pp.s
+as  -mc68020 -o format.o format.s
+as  -mc68020 -o version.o version.s
+as  -mc68020 -o tpl.o tpl.s
+as  -mc68020 -o fcninfo.o fcninfo.s
+echo "(progn (setq build:map 'map \
+		   build:lisp-type 'franz \
+	           lisp-library-directory '/usr/groups/hol/franz/lisplib \
+		   build:dir '/usr/groups/hol/franz/lisplib \
+		   lisp-object-directory '/usr/groups/hol/franz/bin) \
+	     (load '/usr/groups/hol/franz/lisplib/buildlisp)\
+             (dumplisp nlisp))" | ./rawlisp
+Franz Lisp, Opus 38
+-> [fasl /usr/groups/hol/franz/lisplib/common0.o]
+[fasl /usr/groups/hol/franz/lisplib/syntax.o]
+[fasl /usr/groups/hol/franz/lisplib/charmac.o]
+[fasl /usr/groups/hol/franz/lisplib/macros.o]
+[fasl /usr/groups/hol/franz/lisplib/common1.o]
+[fasl /usr/groups/hol/franz/lisplib/common2.o]
+[fasl /usr/groups/hol/franz/lisplib/common3.o]
+[fasl /usr/groups/hol/franz/lisplib/vector.o]
+[fasl /usr/groups/hol/franz/lisplib/array.o]
+[fasl /usr/groups/hol/franz/lisplib/pp.o]
+[fasl /usr/groups/hol/franz/lisplib/format.o]
+[fasl /usr/groups/hol/franz/lisplib/version.o]
+[fasl /usr/groups/hol/franz/lisplib/tpl.o]
+[fasl /usr/groups/hol/franz/lisplib/toplevel.o]
+nil
+-> /usr/groups/hol/franz/lisplib/tackon map nlisp
+nlisp built
+(cd liszt/68k; make Lisp=../../franz/68k/nlisp Liszt=./nliszt nliszt)
+rm -f nliszt
+echo "(load '../cmake.l)(genl nliszt)" | ../../franz/68k/nlisp 
+Franz Lisp, Opus 38.92
+-> [load ../cmake.l]
+t
+-> [fasl /usr/groups/hol/franz/lisplib/fcninfo.o]
+[fasl decl.o]
+[fasl array.o]
+[fasl vector.o]
+[fasl datab.o]
+[fasl expr.o]
+[fasl io.o]
+[fasl funa.o]
+[fasl funb.o]
+[fasl func.o]
+[fasl tlev.o]
+[fasl instr.o]
+[fasl fixnum.o]
+[fasl util.o]
+[fasl lversion.o]
+nil
+Liszt 68000 version 8.39a [.92]
+-> (X=`pwd`; cd /usr/groups/hol/franz/lisplib ; make Liszt=$X/liszt/68k/nliszt all)
+/Nfs/scaup/usr2/hol/franz/liszt/68k/nliszt -xaq machacks
+/Nfs/scaup/usr2/hol/franz/liszt/68k/nliszt -xaq loop
+/Nfs/scaup/usr2/hol/franz/liszt/68k/nliszt -xaq ucifnc
+/Nfs/scaup/usr2/hol/franz/liszt/68k/nliszt -xaq ucido
+/Nfs/scaup/usr2/hol/franz/liszt/68k/nliszt -xaq jkfmacs
+/Nfs/scaup/usr2/hol/franz/liszt/68k/nliszt -xaq trace
+/Nfs/scaup/usr2/hol/franz/liszt/68k/nliszt -xaq record
+/Nfs/scaup/usr2/hol/franz/liszt/68k/nliszt -xaq syscall
+/Nfs/scaup/usr2/hol/franz/liszt/68k/nliszt -xaq cmumacs
+/Nfs/scaup/usr2/hol/franz/liszt/68k/nliszt -xaq cmufncs
+/Nfs/scaup/usr2/hol/franz/liszt/68k/nliszt -xaq fix
+/Nfs/scaup/usr2/hol/franz/liszt/68k/nliszt -xaq step
+/Nfs/scaup/usr2/hol/franz/liszt/68k/nliszt -xaq cmufile
+/Nfs/scaup/usr2/hol/franz/liszt/68k/nliszt -xaq cmutpl
+/Nfs/scaup/usr2/hol/franz/liszt/68k/nliszt -xaq cmuedit
+/Nfs/scaup/usr2/hol/franz/liszt/68k/nliszt -xaq struct
+/Nfs/scaup/usr2/hol/franz/liszt/68k/nliszt -xaq prof
+/Nfs/scaup/usr2/hol/franz/liszt/68k/nliszt -xaq hash
+/Nfs/scaup/usr2/hol/franz/liszt/68k/nliszt -xaq flavorm
+/Nfs/scaup/usr2/hol/franz/liszt/68k/nliszt -xaq lmhacks
+/Nfs/scaup/usr2/hol/franz/liszt/68k/nliszt -xaq describe
+/Nfs/scaup/usr2/hol/franz/liszt/68k/nliszt -xaq flavors
+/Nfs/scaup/usr2/hol/franz/liszt/68k/nliszt -xaq vanilla
+(X=`pwd`; cd /usr/groups/hol/franz/lisplib ; make Liszt=$X/liszt/68k/nliszt struct-again)
+/Nfs/scaup/usr2/hol/franz/liszt/68k/nliszt -xaq struct
+(X=`pwd`; cd franz/68k ;  make Liszt=$X/liszt/68k/nliszt \
+			       ObjDir=/usr/groups/hol/franz/bin\
+			       LibDir=/usr/groups/hol/franz/lisplib\
+                                       DFLAG=-DOS4 LDFLAG=-Bstatic donlisp)
+rm -f nlisp
+make LibDir=/usr/groups/hol/franz/lisplib Liszt=/Nfs/scaup/usr2/hol/franz/liszt/68k/nliszt ObjDir=/usr/groups/hol/franz/bin nlisp
+rm -f nlisp
+(cd /usr/groups/hol/franz/lisplib ; make Liszt=/Nfs/scaup/usr2/hol/franz/liszt/68k/nliszt required)
+echo "(progn (setq build:map 'map \
+		   build:lisp-type 'franz \
+	           lisp-library-directory '/usr/groups/hol/franz/lisplib \
+		   build:dir '/usr/groups/hol/franz/lisplib \
+		   lisp-object-directory '/usr/groups/hol/franz/bin) \
+	     (load '/usr/groups/hol/franz/lisplib/buildlisp)\
+             (dumplisp nlisp))" | ./rawlisp
+Franz Lisp, Opus 38
+-> [fasl /usr/groups/hol/franz/lisplib/common0.o]
+[fasl /usr/groups/hol/franz/lisplib/syntax.o]
+[fasl /usr/groups/hol/franz/lisplib/charmac.o]
+[fasl /usr/groups/hol/franz/lisplib/macros.o]
+[fasl /usr/groups/hol/franz/lisplib/common1.o]
+[fasl /usr/groups/hol/franz/lisplib/common2.o]
+[fasl /usr/groups/hol/franz/lisplib/common3.o]
+[fasl /usr/groups/hol/franz/lisplib/vector.o]
+[fasl /usr/groups/hol/franz/lisplib/array.o]
+[fasl /usr/groups/hol/franz/lisplib/pp.o]
+[fasl /usr/groups/hol/franz/lisplib/format.o]
+[fasl /usr/groups/hol/franz/lisplib/version.o]
+[fasl /usr/groups/hol/franz/lisplib/tpl.o]
+[fasl /usr/groups/hol/franz/lisplib/toplevel.o]
+nil
+-> /usr/groups/hol/franz/lisplib/tackon map nlisp
+nlisp built
+(cd liszt/68k; make Lisp=../../franz/68k/nlisp Liszt=./nliszt nliszt)
+rm -f nliszt
+echo "(load '../cmake.l)(genl nliszt)" | ../../franz/68k/nlisp 
+Franz Lisp, Opus 38.92
+-> [load ../cmake.l]
+t
+-> [fasl /usr/groups/hol/franz/lisplib/fcninfo.o]
+[fasl decl.o]
+[fasl array.o]
+[fasl vector.o]
+[fasl datab.o]
+[fasl expr.o]
+[fasl io.o]
+[fasl funa.o]
+[fasl funb.o]
+[fasl func.o]
+[fasl tlev.o]
+[fasl instr.o]
+[fasl fixnum.o]
+[fasl util.o]
+[fasl lversion.o]
+nil
+Liszt 68000 version 8.39a [.92]
+-> (cd liszt ; make Liszt=68k/nliszt lxref)
+make: Warning: Illegal dependency list for target `.DEFAULT'
+Current working directory /Nfs/scaup/usr2/hol/franz/liszt
+68k/nliszt -xrq -o lxref lxref.l
+date
+Mon Dec 18 13:08:58 GMT 1989
