@@ -18,10 +18,11 @@ distribution office has closed and they left a copy with me."
 
     https://people.eecs.berkeley.edu/~fateman
 
-The tarball contains a file named lispas and other files named
-opus38.92.aa, opus38.92.ab and so forth.  The file fateman/README
-contains instructions on what to do with these files to actually
-extract the distribution.
+The tarball has been extracted into the fateman/lisp directory.  The
+tarball contains a file named lispas and other files named opus38.92.aa,
+opus38.92.ab and so forth.  The file fateman/README contains some
+instructions on how to actually extract the distribution if you wanted
+to do that yourself.
 
 
 The Franz Lisp Manual in the manual directory is from the Computer

@@ -1,3 +1,7 @@
+Note: the contents of lisp-opus38.92.tar has already been extracted
+into the lisp directory.  The details below are the instructions
+for how to extract it all if you wanted to do it yourself.
+
 lisp-opus38.92.tar contains the final university release of Franz
 Lisp (Opus 38.92) for the VAX.  This tarball contains a directory
 named lisp which has a file named lispas and other files named
