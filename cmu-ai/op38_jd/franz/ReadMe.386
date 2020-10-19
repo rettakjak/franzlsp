@@ -1,0 +1,31 @@
+
+This is a distribution of Franz Lisp, Opus 38.92 for NetBSD 0.9
+running on 386 and 486 PCs.  With minor changes, it should also be
+able to run under 386BSD and FreeBSD.
+
+The compile-to-C compiler and the version of fasl that goes with it
+were developed by Jeff Dalton <J.Dalton@ed.ac.uk>.  Some of the
+OS-related and numeric code was written by Richard Tobin.
+
+If you root this source tree in /usr/local/src/franz, you should be
+able to build Franz Lisp by typing "make slow".  If you already have
+working versions of "lisp" and "liszt" in /usr/local/src/franz/bin/,
+you should be able to make new versions by typing "make fast".
+
+If these directories are not the ones you're using, you can edit
+the top-level Makefile to change them.  You may also have to edit
+lisplib/lisztcc, and maybe some other things.
+
+Instead of editing the Makefile, it should work to type
+
+   ./lispconf i386_4_3:
+   make slow
+
+Note that "lisp" in the source root directory is a symbolic link to ".".
+This is an artifact of the way things were set up at some point in the
+past.  It would be easy enough to eliminate it, but I haven't had time
+to make sure nothing depends on it.  However, the only dependency I
+know about is on lisplib/lisztcc.
+
+You will probably have to make /usr/local/lib/lisp be or point to
+the lisp library directory (lisplib in the sources).

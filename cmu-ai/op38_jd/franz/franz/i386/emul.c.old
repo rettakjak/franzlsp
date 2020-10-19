@@ -1,0 +1,93 @@
+/* dmul(x,y,hiptr,loptr) given int x, y, forms double length product in      */
+/* *hiptr, *loptr.                                                           */
+/* kww, 12/04/83                                                             */
+dmul (x, y, hiptr, loptr)
+
+#define lsmask 0x0000ffff
+#define msmask 0xffff0000
+#define carry (((hilo & lsmask) + ((*loptr>>16) & lsmask)) & msmask)
+
+long    x,
+        y,
+       *hiptr,
+       *loptr;
+{
+    long    lsx,
+            msx,
+            lsy,
+            msy,
+            hilo,
+            save,
+            flag;
+
+    flag = 0;
+    if (x < 0 && y >= 0)
+	flag = 1;
+    if (y < 0 && x >= 0)
+	flag = 1;
+    if (x < 0)
+	x = -x;
+    if (y < 0)
+	y = -y;
+    lsx = x & lsmask;
+    lsy = y & lsmask;
+    msx = (x >> 16) & lsmask;
+    msy = (y >> 16) & lsmask;
+    *hiptr = msx * msy;
+    *loptr = lsx * lsy;
+    save = *loptr;
+    hilo = lsx * msy;
+    if (carry != 0)
+	*hiptr += 1;
+    *loptr += (hilo & lsmask) << 16;
+    *hiptr += (hilo >> 16) & lsmask;
+    hilo = msx * lsy;
+    if (carry != 0)
+	*hiptr += 1;
+    *loptr += (hilo & lsmask) << 16;
+    *hiptr += (hilo >> 16) & lsmask;
+    if (flag == 1)
+    {
+	if (*loptr != 0)
+	{
+	    *hiptr = 0 - *hiptr - 1;
+	    *loptr = 0 - *loptr;
+	}
+	else
+	    *hiptr = 0 - *hiptr;
+    }
+}
+
+/********* emul is similar to exarith, but does not compress the result *****/
+/********* if the ms part is -1 or 0  ***************************************/
+/*************used by dmlad**************************************************/
+
+/* changed to take pointer to two longs instead of two pointers to long */
+
+/*
+emul (a, b, c, hi, lo)
+long   *hi,
+       *lo;
+*/
+emul(a, b, c, all)
+long *all;
+{
+    long *hi = &all[0], *lo = &all[1];
+    long    msprod,
+            lsprod,
+            save;
+    dmul (a, b, &msprod, &lsprod);
+ /* if ((msprod & 0xc0000000) != 0) {printf("msprod ovr in emul \n");
+    fflush(stdout); } */
+    *hi = (msprod << 2) | ((lsprod >> 30) & 0x00000003);
+    *lo = lsprod & 0x3fffffff;	/* ls 30 bits */
+    if (c < 0)
+	*hi -= 4;		/* sign extend c */
+    *hi += ((c >> 30) & 0x00000003);
+				/* add ms 2 bits of c into ls 2 of hi */
+    c &= 0x3fffffff;		/* ls 30 bits of c                    */
+    *lo += c;
+    *hi += (*lo >> 30) & 0x00000003;
+				/* add any ovr beyond 30 bits into hi */
+    *lo &= 0x3fffffff;
+}

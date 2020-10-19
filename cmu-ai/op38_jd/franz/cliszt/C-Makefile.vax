@@ -1,0 +1,27 @@
+LispRoot = /usr/src/local/newlisp
+Liszt = nliszt
+CFLAGS = -O -I${LispRoot}/franz/h
+CCOM = /lib/ccom
+COPT = /lib/c2
+FIXMASK = ${LispRoot}/franz/vax/fixmask
+FIXPBIG = ${LispRoot}/franz/vax/fixpbig.e
+
+LintFlags = -I${LispRoot}/franz/h -au
+
+# Lint -h or -c produce pointer alignment and cast complaints...
+
+.SUFFIXES: .lint
+
+.l.o:	$*.l
+	${Liszt} -a -W $*
+
+.c.o:	$*.c
+	cc -E ${CFLAGS} $< | ${CCOM} | ${FIXMASK} | sed -f ${FIXPBIG} \
+		| ${COPT} | as -o $@
+
+.c.s:	$*.c
+	cc -E ${CFLAGS} $< | ${CCOM} | ${FIXMASK} | sed -f ${FIXPBIG} \
+		| ${COPT} > $@
+
+.c.lint:
+	lint ${LintFlags} $<

@@ -1,0 +1,61 @@
+# Makefile for the Franz 386 distribution
+
+# Author: Jeff Dalton <J.Dalton@ed.ac.uk>
+
+# Top level files & directories in the distribution
+
+# N.B. The lisp and liszt in ${Distribution} should be symbolic links
+# to . and cliszt respectively.  They exist because some things use
+# them as directory names.
+
+Distribution = \
+	COPYING COPYRIGHT ReadMe ReadMe.386 \
+	386-Makefile Makefile lispconf \
+	franz lisplib cliszt doc lisp liszt man utils 
+
+
+# Floppy backup and restore
+
+TarFile = /dev/rfd0a
+
+Exclude = /tmp/franz-lisp-exclude
+
+RelDir = ..
+
+file-backup:
+	${MAKE} -f 386-Makefile \
+		TarFile=${RelDir}/franz.`date +%d%h%y`.tar.gz \
+		backup
+
+386-backup:
+	${MAKE} -f 386-Makefile TarFile=/dev/rfd0a backup
+
+backup:
+	${MAKE} -f 386-Makefile exclude
+	gnutar zcvXf ${Exclude} ${TarFile} ${Distribution}
+
+exclude:
+	rm -f ${Exclude}
+	echo cliszt/liszt-test > ${Exclude}
+	echo cliszt/TAGS >> ${Exclude}
+	echo cliszt/design.early >> ${Exclude}
+	echo cliszt/perq >> ${Exclude}
+	find . \( -name "*.o" -o -name "*.x" \) -print \
+	   | sed "s:^./::" >> ${Exclude}
+	# Emacs backup files can make it too large for one floppy.
+	find . -name "*~"     -print | sed "s:^./::" >> ${Exclude}
+	# Exclude .r and .rx files from doc/
+	${MAKE} -f 386-Makefile Exclude=${Exclude} doc-exclude
+	# Now exclude executable non-directories that are > 10K bytes.
+	# The idea is that these will not be shell scripts.
+	# find . -type f -perm -u+x -size +20 -print \
+	#    | sed "s:^./::" >> ${Exclude}
+	find . -type f -perm -100 -size +20 -print \
+	   | sed "s:^./::" >> ${Exclude}
+
+doc-exclude:
+	find ./doc \( -name "*.r" -o -name "*.rx" \) -print \
+	   | sed "s:^./::" >> ${Exclude}
+
+
+# End

@@ -1,0 +1,18 @@
+#!/bin/sh
+#
+# Manual pager for the Franz Lisp help function.
+# Written by Jeff Dalton.
+#
+# Arg 1 is the pathname of an nroff-formatted chapter of the Franz Manual.
+# Arg 2, if given, is the name of a function, special form, or macro. 
+#
+# Here we use more's +/pattern argument to find the name given in $2.
+# The pattern is a regular expression, and we want it to begin with
+# an open paren.  Hence the backslash.  It's possible that other
+# versons of more will have a different syntax for patterns and
+# not want the backslash.
+#
+case $2 in
+	?*) ul $1 | more -f "+/\($2";;
+	 *) ul $1 | more -f;;
+esac

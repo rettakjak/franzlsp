@@ -1,0 +1,4 @@
+#!/bin/sh
+LispRoot=/usr/local/src/franz/lisp
+CFLAGS="-O2 -I${LispRoot}/franz/h"
+exec cc -c ${CFLAGS} "$@"

@@ -1,0 +1,636 @@
+
+alloc.c,1088
+# define ATOLX(60,1618
+Badcall(695,16891
+static char * Iinewstr(411,10016
+Ipurep(652,15707
+LImemory(1608,38163
+# define MARKVAL(59,1555
+Ngc(707,17022
+alloc(1140,27677
+csegment(1175,28725
+int csizeof(1220,29702
+gc(723,17406
+gc1(771,18497
+gcrebear(1263,30550
+get_more_space(161,4814
+getatom(1511,36002
+gethspace(1241,30043
+getvec(546,12166
+hashfcn(1598,37959
+inewatom(1571,37377
+char *inewstr(420,10186
+inewval(494,11195
+markdp(1297,31371
+markit(1287,31103
+myhook(1630,38864
+newarray(431,10289
+newatom(372,9079
+newdot(322,8473
+newdoub(342,8711
+newfunct(445,10517
+newhunk(474,10909
+newint(310,8365
+newsdot(354,8821
+newstr(386,9377
+newval(456,10689
+newvec(513,11513
+next_one(236,6684
+next_pure_one(291,7999
+nveci(525,11649
+char *pinewstr(425,10233
+pnewdb(348,8764
+pnewdot(332,8589
+pnewhunk(484,11049
+pnewint(316,8416
+pnewsdot(363,8944
+pnewval(465,10796
+pnewvec(519,11581
+pnveci(531,11717
+pruneb(669,16290
+# define readbit(47,1152
+# define roundup(57,1505
+space_warn(276,7591
+int typenum(1225,29792
+xsbrk(1458,34806
+char *ysbrk(1484,35396
+
+data.c,56
+long *exsp = xstack + ((sizeof xstack)/(sizeof 77,2369
+
+divbig.c,175
+HackHex(443,9564
+Ibiglsh(326,6893
+Ihau(217,4874
+Lbiglsh(436,9423
+Lhaipar(257,5531
+Lhau(230,5047
+Lsbiglsh(429,9274
+divbig(19,338
+export(186,4371
+#define toint(17,308
+
+error.c,239
+Ierrorh(60,1475
+argerr(400,9378
+badmem(392,9230
+binderr(375,8988
+calhan(314,7363
+error(37,908
+errorh(278,6704
+errorh1(289,6894
+errorh2(301,7114
+lispend(347,8379
+namerr(360,8664
+rtaberr(382,9071
+wnaerr(419,9894
+xserr(388,9174
+
+eval.c,262
+Ifuncal(511,15480
+Lapply(354,10704
+Lfuncal(696,21225
+Llexfun(725,21769
+Undeff(785,23051
+bindfix(795,23261
+dumpnamestack(336,10382
+eval(26,406
+fchack 714,21513
+linterp(775,22766
+popnames(320,10079
+protect(756,22518
+rebind(477,14378
+unprot(769,22711
+
+eval2.c,182
+Iarray(24,532
+Ifcall(64,1751
+Ifclosure(331,8943
+LIfss(489,13157
+dumpmydata(41,853
+ftlspn_(239,5574
+ftolsp_(215,5196
+locatevar(463,12703
+xbcopy(207,5084
+xpopnames(409,11333
+
+evalf.c,86
+Levalf 9,102
+Lfretn 149,4402
+struct frame *searchforpdl 117,3572
+vfypdlp(138,4132
+
+fasl.c,165
+lispval Lfasl(178,6147
+add_offset(748,21910
+add_offset(766,22367
+chktt(717,21117
+clrtt(692,20394
+compar(641,19128
+gettran(653,19357
+#define roundup(144,5106
+
+fex1.c,246
+Nand(358,7742
+Nbreak(246,5695
+Ncatch(113,2881
+Ncond(331,7296
+Ndef(283,6308
+lispval Nerrset(151,3743
+Nexit(264,6109
+Ngo(214,4962
+Nor(376,8014
+Nprog(25,700
+Nquote(299,6627
+Nreset(234,5427
+Nsetq(306,6679
+Nsys(274,6269
+Nthrow(193,4588
+
+fex2.c,100
+Ndo(22,369
+Nfunction(343,7934
+Nprog2(314,7419
+Nprogn(302,7239
+Nprogv(256,5999
+typred(328,7690
+
+fex3.c,254
+Igtpgsz(520,13450
+Lgetaddress(475,12035
+Ndumplisp(24,455
+Ndumplisp(153,3609
+#define STASSGN(468,11885
+#define STASSGN(471,11973
+pagenorm(449,11478
+pagenorm(454,11601
+pagerand(447,11412
+pagerand(452,11571
+pageseql(448,11445
+pageseql(453,11586
+
+fex4.c,137
+Iaddstat(405,10590
+Isstatus(286,7565
+lispval Istsrch(390,10292
+Lsyscall(32,650
+Nevwhen(85,1779
+Nsstatus(271,7258
+Nstatus(154,4076
+
+fexr.c,48
+Ngcafter(21,462
+Nopval(33,793
+copval(58,1661
+
+ffasl.c,203
+Ilibdir(589,14107
+Lcfasl(60,1419
+Lrmadd(385,9040
+copyblock(358,8546
+dispget(38,1009
+gstab(240,6042
+mytemp(312,7571
+#define oktox(237,5946
+#define round(18,356
+ungstab(320,7762
+verify(330,7899
+
+fpipe.c,109
+NiorUtil(63,1039
+Nioreset(44,760
+lispval P(79,1277
+alloca(122,2057
+FILE *fpipe(18,304
+fstopen(107,1849
+
+frame.c,102
+Inlthrow(121,4139
+Inonlocalgo(66,2625
+Iretfromfr(185,5327
+Lframedump(259,6514
+matchtags(197,5644
+
+inits.c,161
+badmr(195,4298
+delayoff(180,4065
+dosig(185,4124
+initial(28,613
+makenv(82,1773
+#define	mask(202,4433
+re_enable(204,4471
+sginth(112,2386
+sigcall(151,3393
+
+io.c,296
+Iratom(334,8513
+atomtoolong(680,15949
+calcnum(629,15039
+dmpport(1015,23164
+dopow(586,14202
+finatom(658,15568
+getnum(464,11126
+imacrox(274,7215
+lfltpr(992,22603
+macrox(251,6719
+#define next(332,8393
+printr(708,16610
+ratomr(311,8069
+readr(79,2744
+readrx(103,3303
+vectorpr(957,21913
+
+lam1.c,844
+Iequal(725,13022
+Ipntlen(928,17008
+Larrayp(603,10689
+Latom(519,9517
+Lbcdp(589,10540
+Lbigtol(222,3867
+Lc02r(143,2520
+Lc03r(151,2623
+Lc04r(159,2728
+Lc12r(147,2571
+Lc13r(155,2675
+Lc14r(163,2781
+Lcaar(139,2480
+Lcadr(135,2440
+Lcar(127,2362
+Lcdr(131,2401
+Lclose(415,7773
+Lcons(244,4331
+Ldrain(460,8506
+Ldtpr(582,10466
+Leq(302,5395
+Lequal(643,11257
+Leval(19,356
+Lhunkp(615,10852
+Linfile(334,5872
+Llist(487,8995
+Lnthelem(177,3042
+Lnull(314,5536
+Lnumberp(508,9377
+Lnwritn(441,8215
+Loutfile(360,6607
+Lpatom(878,16116
+Lpntlen(924,16959
+Lportp(596,10613
+Lprint(844,15490
+Lreturn(325,5765
+Lrplca(293,5314
+Lrplcd(297,5354
+Lscons(199,3406
+Lset(625,10998
+Lterpr(396,7522
+Ltruename(431,8018
+Ltype(530,9676
+Lxcar(29,465
+Lxcdr(48,840
+Zequal(770,13875
+cxxr(71,1344
+oLequal(717,12871
+okport(963,17482
+rpla(259,4553
+
+lam2.c,434
+Iconcat(249,5661
+Iflatsi(56,1343
+Iget(458,10209
+Igetplist(477,10440
+Iputprop(346,7567
+Lconcat(324,7154
+Lflatsi(28,718
+Lget(408,9237
+Lgetd(489,10636
+Lload(184,3926
+Lmap(677,14676
+Lmapc(666,14516
+Lmapcan(682,14720
+Lmapcon(690,14796
+Lmapcrx(525,11414
+Lmapcx(613,13392
+Lmaplist(601,13115
+Lmpcar(588,12957
+Lputd(505,10876
+Lputprop(333,7247
+Lratom(97,1918
+Lread(93,1880
+Lreadc(101,1958
+Luconcat(328,7200
+r(110,2240
+
+lam3.c,322
+Labsval(335,6117
+Ladd1(224,4375
+Lalfalp(18,332
+Ldiff(158,3046
+Lgetsyntax(528,10577
+Lgreaterp(112,1838
+Llessp(135,2444
+Lminus(272,5093
+Lmod(175,3322
+Lncons(32,639
+Lnegp(302,5578
+Loblist(355,6358
+Lonep(58,1007
+Lsetsyn(402,7606
+Lsub1(250,4747
+Lzapline(579,11611
+Lzerop(43,789
+cmpx(81,1356
+rpltab(509,10149
+
+lam4.c,296
+Ladd(18,343
+Ldbtofl(834,19113
+lispval Lfadd1(741,17286
+lispval Lfd(721,16800
+lispval Lfexpt(755,17580
+lispval Lflessp(702,16430
+Lfltodb(847,19348
+lispval Lfm(667,15658
+lispval Lfp(653,15382
+lispval Lfsub1(824,18914
+lispval Lft(688,16152
+Lquo(485,11090
+Lsub(163,3778
+Ltimes(365,8586
+
+lam5.c,307
+Ifloat(486,10096
+LDivide(513,10693
+lispval LEmuldiv(560,11575
+Largv(234,4858
+Lascii(276,5759
+Lboole(307,6538
+lispval Lbreak(502,10568
+lispval Lchdir(254,5248
+Lexpldx(28,675
+Lfact(356,7331
+ lispval Lfix(386,8050
+Lfloat(452,9422
+Lfrexp(416,8783
+Lxplda(225,4666
+Lxpldc(203,4287
+Lxpldn(215,4475
+
+lam6.c,354
+Imkrtab(442,9089
+Larg(234,4550
+Lassq(213,4274
+Lboundp(116,2399
+Lcopyint(540,11209
+Lcpy1(511,10651
+lispval Lerr(299,6234
+Lgetenv(99,2119
+Lkilcopy(226,4495
+Lmakertbl(496,10371
+Lplist(133,2683
+Lptime(269,5569
+Lreadli(23,417
+Lsetarg(250,5036
+Lsetpli(153,3034
+Lsignal(172,3479
+Ltyi(322,6701
+Ltyipeek(390,8185
+Ltyo(416,8637
+Luntyi(365,7796
+
+lam7.c,379
+Ibindvars(555,11367
+Iimplode(468,9592
+Iunbindvars(591,12253
+Lbcdad(350,7616
+Lexece(86,1267
+Lexit(458,9430
+Lfdopen(70,1015
+Lfork(18,312
+Lgensym(264,6028
+Limplode(513,10435
+Lmaknam(507,10364
+Lntern(519,10505
+Lpipe(49,712
+Lprname(407,8479
+Lprocess(150,3166
+Lrematom(385,8097
+Lremprop(299,6587
+Lstringp(367,7886
+Lsymbolp(376,7992
+Ltymestr(615,12921
+Lwait(29,431
+
+lam8.c,988
+Ibalmod(507,10328
+lispval Imath(22,480
+Inewvector(1044,20448
+Ipurcopy(879,17871
+LIvref(1129,22341
+LIvset(1167,23349
+LIvsize(1209,24336
+LMakhunk(273,5397
+lispval Lacos(57,983
+lispval Lasin(52,940
+lispval Latan(79,1250
+Lcharindex(845,17160
+lispval Lcos(47,899
+Lcprintf(625,12608
+Lctcherr(210,4041
+Lcxr(304,6019
+lispval Lexp(66,1068
+Lfileopen(467,9223
+Lfseek(146,2486
+lispval Lhashst(176,3274
+Lhtol(427,8454
+Lhunksize(400,8020
+lispval Llog(71,1109
+Llsh(579,11570
+Lmakunb(133,2305
+Lnvec(1013,20114
+Lnvecb(1019,20162
+Lnvecl(1031,20260
+Lnvecw(1025,20211
+Lprobef(717,14458
+Lpurcopy(872,17788
+Lpurep(998,19897
+Lpvp(1113,21935
+Lrandom(116,1943
+Lrplcx(338,6704
+lispval Lsin(42,858
+Lsprintf(667,13554
+lispval Lsqrt(62,1026
+Lsstrn(777,15673
+LstarMod(573,11521
+Lstarinvmod(562,11312
+Lstarrpx(373,7497
+Lsubstring(729,14647
+Lvectorp(1105,21815
+Lvprop(1218,24480
+Lvsp(1231,24739
+bndchk(609,12338
+invmod 535,10878
+vecequal(1254,25208
+veciequal(1295,26169
+
+lam9.c,65
+LIfranzcall(163,3693
+Ltci(47,1080
+Ltcx(81,1899
+show(102,2245
+
+lamgc.c,33
+Lgcstat(47,1001
+gcdump(93,2326
+
+lamp.c,35
+Lmonitor(26,467
+Lmonitor(55,1064
+
+lamr.c,694
+CNTTYP(370,7731
+Lalloc(25,506
+Larayref(428,8711
+Lderef(408,8387
+Lfake(388,8066
+Lforget(62,1369
+Lgeta(187,3922
+Lgetaux(149,3242
+Lgetdata(168,3565
+Lgetdel(124,2704
+Lgetdisc(267,5632
+Lgetl(100,2164
+Lgetlang(230,4859
+Lgetloc(285,5985
+Lgetparams(249,5261
+Lgtentry(221,4687
+Llctrace(460,9383
+Lmaknum(402,8306
+Lmarray(205,4256
+Lmfunction(304,6346
+Lod(373,7792
+Lopval(503,10222
+Lpname(419,8551
+Lptr(453,9314
+Lputa(196,4082
+Lputaux(158,3394
+Lputdata(177,3730
+Lputdel(133,2863
+Lputdisc(276,5801
+Lputl(109,2323
+Lputlang(239,5042
+Lputloc(294,6143
+Lputparams(258,5438
+Lreplace(319,6785
+Lsegment(44,883
+Lsimpld(474,9549
+Lsizeof(37,799
+Lslevel(468,9494
+Lvaluep(364,7628
+
+lisp.c,46
+Ntpl(69,1365
+franzexit(95,1938
+main(28,650
+
+low.c,0
+
+pbignum.c,16
+pbignum(15,286
+
+rlc.c,32
+#define brk(16,340
+rlc(22,448
+
+subbig.c,15
+subbig(25,678
+
+sysat.c,172
+#define FIDDLE(15,320
+#define cforget(21,646
+static dofuns(793,27361
+makevals(39,1299
+matom(456,15384
+mftab(499,16439
+lispval mfun(482,16133
+lispval mstr(471,15796
+
+trace.c,68
+Leval1(15,310
+Levalhook(43,1182
+Lfunhook(80,2084
+Lrset 131,3456
+
+i386/68k.c,253
+Imuldiv(25,364
+LIshowstack(253,5209
+Lbaktrace(239,4954
+Lmkcth(339,6983
+Lpolyev(89,1562
+Lrot(120,2313
+Lshostk(165,3467
+dothunk(307,6450
+isho(170,3530
+mmuladd(5,42
+myfrexp(140,2820
+prunei(146,2968
+read(76,1343
+syscall(142,2893
+write(39,624
+
+i386/adbig.c,28
+struct s_dot *adbig(13,246
+
+i386/calqhat.c,14
+calqhat(3,96
+
+i386/dodiv.c,37
+long dodiv(6,141
+long dsneg(23,442
+
+i386/dsmult.c,15
+dsmult(13,366
+
+i386/exarith.c,21
+long exarith(12,270
+
+i386/first8.c,99
+#define copy(8,153
+doit(19,388
+init(14,261
+main(24,472
+#define next(7,103
+#define type(9,179
+
+i386/fixbits.c,14
+fixbits(2,60
+
+i386/inewint.c,34
+blzero(13,225
+int *inewint(4,83
+
+i386/mlsb.c,77
+adback(24,492
+dsadd1(59,1252
+long dsdiv(41,866
+dsrsh(77,1556
+mlsb(5,102
+
+i386/mulbig.c,29
+struct s_dot *mulbig(14,248
+
+i386/nargs.c,13
+nargs(8,260
+
+i386/qfuncl.c,266
+#define	NILsub(53,891
+	NILsub(364,7645
+	NILsub(484,10508
+#define	NILtest(52,853
+#define NILtest(55,934
+	NILtest(282,5894
+	NILtest(304,6365
+	movl	a0@(4),a0@			|make cdr 425,9189
+	clrl	a0@				|clrq 313,6544
+	tstl	2*4+_stattab			|see if linkin posble 84,1573
+
+i386/suncore.c,22
+hookupcore(437,16980

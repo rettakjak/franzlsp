@@ -1,0 +1,36 @@
+Copyright information for the "cliszt" compiler for Franz Lisp.
+
+The files in this directory and its subdirectories began as code that
+is Copyright (c) 1990 by The Regents of the University of California,
+specifically the "liszt" Franz Lisp compiler for VAX and 68k machines.
+The parts of the code that deal with compiling to C are new, as are
+a number of other changes.  For the new code, one or more of the
+following copyrights apply:
+
+  Copyright (c) 1985, 1986 by the University of Edinburgh
+  Copyright (c) 1993, 1994 by Jeff Dalton
+
+This compiler was developed by Jeff Dalton.  Permission to copy this
+software, to redistribute it, and to use it for any non-commercial
+purpose is granted, subject to the following restrictions and
+understandings.
+
+1. Any copy made of this software must include this copyright notice
+   in full.
+
+2. No fees or compensation are charged for use, copies, or access to
+   this software.
+
+3. Users of this software agree to make their best efforts (a) to
+   return to the author any improvements or extensions that they
+   make, so that these may be included in future releases; and (b)
+   to inform the author of noteworthy uses of this software.
+
+4. All materials developed as a consequence of the use of this
+   software shall duly acknowledge such use, in accordance with the
+   usual standards of acknowledging credit in academic research.
+
+5. The author has made no warrantee or representation that the
+   operation of this software will be error-free, and the author is 
+   under no obligation to provide any services, by way of maintenance,
+   update, or otherwise.

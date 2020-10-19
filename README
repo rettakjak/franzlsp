@@ -119,28 +119,14 @@ vm.user_va0_disable = 0
 The rest of the steps below are all relative to the cmu-ai/op38_jd
 directory.
 
-We need to extract the lisplib directory from franz.tgz and place it
-at /usr/local/lib/lisp.  The lisplib directory contains various
-library files and the interpreter expects these files to be in
-/usr/local/lib/lisp.
+franz.tgz has been extracted into the franz directory.  The lisplib
+subdirectory contains various library files and the interpreter expects
+these files to be in /usr/local/lib/lisp:
 
-$ tar zxf franz.tgz lisplib
+# cp -R franz/lisplib /usr/local/lib/lisp
 
-$ su
-Password:
-
-# mv lisplib /usr/local/lib/lisp
-
-Now uncompressing lisp.gz and then executing the resulting interpreter
-should give us a working Franz Lisp REPL:
-
-$ ls -l lisp.gz
--rw-r--r--  1 kjak  kjak  289794 Jun 13  1995 lisp.gz
-
-$ gunzip lisp.gz
-
-$ ls -l lisp
--rw-r--r--  1 kjak  kjak  1038692 Jun 13  1995 lisp
+The lisp file (originally from the compressed lisp.gz) is the interpreter.
+This should give us a working Franz Lisp REPL:
 
 $ file lisp
 lisp: a.out little-endian 32-bit demand paged pure executable not stripped
@@ -320,15 +306,8 @@ nil
 The Liszt Compiler
 ------------------
 
-We can uncompress liszt.gz and get a REPL:
-
-$ ls -l liszt.gz
--rw-r--r--  1 kjak  kjak  426285 Jun 13  1995 liszt.gz
-
-$ gunzip liszt.gz
-
-$ ls -l liszt
--rw-r--r--  1 kjak  kjak  1644900 Jun 13  1995 liszt
+The liszt file (originally from the compressed liszt.gz) is the compiler.
+This should also give us a REPL:
 
 $ file liszt
 liszt: a.out little-endian 32-bit demand paged pure executable not stripped
@@ -370,8 +349,9 @@ $ ./liszt -r test.l
 ?Error: test.l: : Compilation aborted due to previous errors
 
 
-The same franz.tgz we used before also contains some header files.  If
-we use these then we can actually get an object file:
+The same franz.tgz (or franz directory) we used before also contains
+some header files.  If we use these then we can actually get an object
+file:
 
 $ ./liszt test.l
 Compilation begins with Liszt C version 8.39.spottisport

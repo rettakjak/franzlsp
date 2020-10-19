@@ -1,0 +1,21 @@
+LispRoot = /usr/local/src/franz/lisp
+Liszt = nliszt
+CFLAGS = -O -I${LispRoot}/franz/h
+
+LintFlags = -I${LispRoot}/franz/h -au
+
+# Lint -h or -c produce pointer alignment and cast complaints...
+
+.SUFFIXES: .lint
+
+.l.o:	$*.l
+	${Liszt} -a -W $*
+
+.c.o:	$*.c
+	cc -c ${CFLAGS} $<
+
+.c.s:	$*.c
+	cc -c -S ${CFLAGS} $<
+
+.c.lint:
+	lint ${LintFlags} $<
